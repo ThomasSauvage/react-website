@@ -50,7 +50,11 @@ export const Home = () => {
   return (
     <Grid alignContent="center" gap="3em" marginBottom="8em">
       <Section>
-        <Flex flexDirection="row" justifyContent="center" alignItems="center">
+        <Flex
+          flexDirection={{ base: "column", md: "row" }}
+          justifyContent="center"
+          alignItems="center"
+        >
           <Image
             src="/photo.jpg"
             alt="Thomas Sauvage"
