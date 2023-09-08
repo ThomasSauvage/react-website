@@ -27,7 +27,8 @@ const Pic = ({ name }: { name: string }) => {
     <>
       <Image
         src={`/pics/small/${name}`}
-        height="15em"
+        height={{ base: "auto", md: "15em" }}
+        width={{ base: "90%", md: "auto" }}
         onClick={onOpen}
         borderRadius="0.5em"
       />
@@ -55,7 +56,7 @@ const Pic = ({ name }: { name: string }) => {
 
 export const Pictures = () => {
   return (
-    <Flex flexWrap="wrap" gap="1em" justifyContent="space-between">
+    <Flex flexWrap="wrap" gap="1em" justifyContent="space-around">
       {pictures.map((name) => (
         <Pic name={name} key={name} />
       ))}
