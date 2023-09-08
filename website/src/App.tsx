@@ -1,7 +1,7 @@
 import { Grid } from "@chakra-ui/react";
 import React from "react";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { Contact } from "./pages/Contact";
 import { Home } from "./pages/Home";
 import { NavBar } from "./pages/NavBar";
@@ -43,8 +43,9 @@ export const routes: RoutePath[] = [
 ];
 
 const App = () => {
+  // HashRouter replaces BrowserRouter to allow the app to be hosted on GitHub Pages
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Grid
         marginLeft={{ base: 0, md: "10em" }}
         marginRight={{ base: 0, md: "10em" }}
@@ -56,7 +57,7 @@ const App = () => {
           ))}
         </Routes>
       </Grid>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
