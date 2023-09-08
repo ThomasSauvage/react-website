@@ -45,7 +45,10 @@ export const routes: RoutePath[] = [
 const App = () => {
   return (
     <BrowserRouter>
-      <Grid marginLeft="10em" marginRight="10em">
+      <Grid
+        marginLeft={{ base: 0, md: "10em" }}
+        marginRight={{ base: 0, md: "10em" }}
+      >
         <NavBar />
         <Routes>
           {routes.map(({ path, element }) => (
