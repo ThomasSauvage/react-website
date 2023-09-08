@@ -6,6 +6,7 @@ import { Contact } from "./pages/Contact";
 import { Home } from "./pages/Home";
 import { NavBar } from "./pages/NavBar";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { Pictures } from "./pages/Pictures";
 
 interface RoutePath {
   path: string;
@@ -23,6 +24,11 @@ export const routes: RoutePath[] = [
     path: "/projects",
     name: "Projets",
     element: <div>Projets</div>,
+  },
+  {
+    path: "/pictures",
+    name: "Photos",
+    element: <Pictures />,
   },
   {
     path: "/contact",
@@ -43,7 +49,7 @@ const App = () => {
         <NavBar />
         <Routes>
           {routes.map(({ path, element }) => (
-            <Route path={path} element={element} />
+            <Route path={path} element={element} key={path} />
           ))}
         </Routes>
       </Grid>
