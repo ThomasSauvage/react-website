@@ -1,0 +1,64 @@
+import {
+  Center,
+  Flex,
+  Image,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalOverlay,
+  useDisclosure,
+} from "@chakra-ui/react";
+
+const pictures = [
+  "1.png",
+  "2.png",
+  "3.jpg",
+  "4.jpg",
+  "5.jpg",
+  "6.jpg",
+  "7.jpg",
+  "8.jpg",
+];
+
+const Pic = ({ name }: { name: string }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  return (
+    <>
+      <Image
+        src={`/pics/small/${name}`}
+        height="15em"
+        onClick={onOpen}
+        borderRadius="0.5em"
+      />
+      <Modal isOpen={isOpen} onClose={onClose} size="full">
+        <ModalOverlay />
+        <ModalContent>
+          <ModalCloseButton />
+          <ModalBody margin="2em">
+            <Center height="90vh">
+              <Image
+                borderRadius="0.5em"
+                key={name}
+                src={`/pics/full/${name}`}
+                maxHeight="90vh"
+                maxWidth="90vw"
+                objectFit="cover"
+              />
+            </Center>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+    </>
+  );
+};
+
+export const Pictures = () => {
+  return (
+    <Flex flexWrap="wrap" gap="1em" justifyContent="space-between">
+      {pictures.map((name) => (
+        <Pic name={name} key={name} />
+      ))}
+    </Flex>
+  );
+};

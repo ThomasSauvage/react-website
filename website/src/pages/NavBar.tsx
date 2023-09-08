@@ -19,7 +19,7 @@ export const NavBar = () => {
       {routes.map(
         ({ name, path }) =>
           name && (
-            <NavLink to={path}>
+            <NavLink to={path} key={path}>
               <Button
                 marginRight="1em"
                 marginLeft="1em"
