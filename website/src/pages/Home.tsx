@@ -169,6 +169,20 @@ export const Home = () => {
 
       <Section title="Mes expériences">
         <Accordion>
+          <AccordionLine title="Binet Réseau • Développeur web • Mai 2023 - ...">
+            <List>
+              <LItem>Association d'informatique de l'Ecole polytechnique</LItem>
+              <LItem>
+                Développement d'un outil de gestion de stock alimentaire, voir
+                mes{" "}
+                <Link href="/projects" color="veryAccent">
+                  projets
+                </Link>{" "}
+                en Typescript, React et Adonis
+              </LItem>
+            </List>
+          </AccordionLine>
+
           <AccordionLine title="Armée de Terre • Officier, Professeur & Colleur de Mathématiques, Physique et Informatique en Maths sup/Maths spé • Septembre 2022 - Avril 2023 ">
             <List>
               <LItem>Formation d'officier</LItem>
@@ -191,9 +205,9 @@ export const Home = () => {
                 Recherche scientifique en biologie, mathématiques, et physique
               </LItem>
               <LItem>
-                Voir{" "}
+                Voir mes{" "}
                 <Link href="/projects" color="veryAccent">
-                  Mes projets
+                  projets
                 </Link>
               </LItem>
             </List>

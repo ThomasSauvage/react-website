@@ -1,16 +1,24 @@
 import { Grid } from "@chakra-ui/react";
 import React from "react";
 
+import {
+  AiOutlineHome,
+  AiOutlinePhone,
+  AiOutlinePicture,
+} from "react-icons/ai";
+import { MdOutlineScience } from "react-icons/md";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { Contact } from "./pages/Contact";
 import { Home } from "./pages/Home";
 import { NavBar } from "./pages/NavBar";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { Pictures } from "./pages/Pictures";
+import { Projects } from "./pages/Projects";
 
 interface RoutePath {
   path: string;
   name: string | null;
+  logo?: React.ReactElement;
   element: React.ReactNode;
 }
 
@@ -18,21 +26,25 @@ export const routes: RoutePath[] = [
   {
     path: "/",
     name: "Accueil",
+    logo: <AiOutlineHome />,
     element: <Home />,
   },
   {
     path: "/projects",
     name: "Projets",
-    element: <div>Projets</div>,
+    logo: <MdOutlineScience />,
+    element: <Projects />,
   },
   {
     path: "/pictures",
     name: "Photos",
+    logo: <AiOutlinePicture />,
     element: <Pictures />,
   },
   {
     path: "/contact",
     name: "Me contacter",
+    logo: <AiOutlinePhone />,
     element: <Contact />,
   },
   {
@@ -47,8 +59,8 @@ const App = () => {
   return (
     <HashRouter>
       <Grid
-        marginLeft={{ base: 0, md: "10em" }}
-        marginRight={{ base: 0, md: "10em" }}
+        marginLeft={{ base: 0, lg: "10em" }}
+        marginRight={{ base: 0, lg: "10em" }}
       >
         <NavBar />
         <Routes>
