@@ -4,17 +4,21 @@ import {
   Center,
   Flex,
   Heading,
+  Icon,
   IconButton,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
   Stack,
+  Text,
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { routes } from "../App";
 export const NavBar = () => {
+  const { pathname: actualPath } = useLocation();
+  console.log(actualPath);
   return (
     <Stack
       direction={{ base: "column", lg: "row" }}
@@ -45,9 +49,11 @@ export const NavBar = () => {
                   marginRight="1em"
                   marginLeft="1em"
                   backgroundColor="veryAccent"
+                  borderWidth="2px"
+                  borderColor={actualPath === path ? "white" : "veryAccent"}
                   color="white"
                   _hover={{ color: "accent" }}
-                  leftIcon={logo}
+                  leftIcon={<Icon as={logo} />}
                 >
                   {name}
                 </Button>
@@ -64,6 +70,8 @@ export const NavBar = () => {
             color="white"
             variant="outline"
             width="100%"
+            _hover={{ background: "none" }}
+            _expanded={{ background: "veryAccent" }}
           />
 
           <MenuList alignItems="center">
@@ -72,7 +80,23 @@ export const NavBar = () => {
                 name && (
                   <Center>
                     <NavLink to={path} key={path}>
-                      <MenuItem icon={logo}>{name}</MenuItem>
+                      <MenuItem
+                        height="3em"
+                        background={actualPath === path ? "accent" : ""}
+                        borderRadius="1em"
+                      >
+                        <Icon
+                          as={logo}
+                          color={actualPath === path ? "white" : "black"}
+                        />
+                        <Text
+                          marginLeft="1em"
+                          fontSize="lg"
+                          color={actualPath === path ? "white" : "black"}
+                        >
+                          {name}
+                        </Text>
+                      </MenuItem>
                     </NavLink>
                   </Center>
                 )

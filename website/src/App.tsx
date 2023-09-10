@@ -1,6 +1,7 @@
 import { Grid } from "@chakra-ui/react";
 import React from "react";
 
+import { IconType } from "react-icons";
 import {
   AiOutlineHome,
   AiOutlinePhone,
@@ -18,7 +19,7 @@ import { Projects } from "./pages/Projects";
 interface RoutePath {
   path: string;
   name: string | null;
-  logo?: React.ReactElement;
+  logo?: IconType;
   element: React.ReactNode;
 }
 
@@ -26,25 +27,25 @@ export const routes: RoutePath[] = [
   {
     path: "/",
     name: "Accueil",
-    logo: <AiOutlineHome />,
+    logo: AiOutlineHome,
     element: <Home />,
   },
   {
     path: "/projects",
     name: "Projets",
-    logo: <MdOutlineScience />,
+    logo: MdOutlineScience,
     element: <Projects />,
   },
   {
     path: "/pictures",
     name: "Photos",
-    logo: <AiOutlinePicture />,
+    logo: AiOutlinePicture,
     element: <Pictures />,
   },
   {
     path: "/contact",
     name: "Me contacter",
-    logo: <AiOutlinePhone />,
+    logo: AiOutlinePhone,
     element: <Contact />,
   },
   {
