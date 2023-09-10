@@ -12,10 +12,12 @@ import {
   MenuList,
   Stack,
   Text,
+  VisuallyHidden,
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { NavLink, useLocation } from "react-router-dom";
 import { routes } from "../App";
+import { LanguageSelector } from "../utils/Language";
 export const NavBar = () => {
   const { pathname: actualPath } = useLocation();
   console.log(actualPath);
@@ -104,6 +106,12 @@ export const NavBar = () => {
           </MenuList>
         </Menu>
       </Box>
+      <VisuallyHidden>
+        {/* Work in progress */}
+        <Center marginTop="0.5em">
+          <LanguageSelector />
+        </Center>
+      </VisuallyHidden>
     </Stack>
   );
 };

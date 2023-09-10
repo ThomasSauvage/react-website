@@ -1,4 +1,5 @@
-import React, { ReactNode, useContext, useState } from "react";
+import { Button, HStack, Image, Text, TextProps } from "@chakra-ui/react";
+import React, { useContext, useState } from "react";
 
 type Language = "fr" | "en";
 
@@ -21,18 +22,45 @@ export const LanguageProvider = ({
   );
 };
 
-type TextLanguageProps = {
+type TextLanguage = {
   [key in Language]: string;
 };
 
-export const useTextLanguage = (texts: TextLanguageProps) => {
+export const useTextLanguage = (texts: TextLanguage) => {
   const { language } = useContext(LanguageContext);
 
   return texts[language];
 };
 
-export const TextLanguage = (texts: TextLanguageProps): ReactNode => {
-  const text = useTextLanguage(texts);
+type TextLProps = Omit<TextProps, "children"> & {
+  children: TextLanguage;
+};
 
-  return <>{text}</>;
+export const TextL = ({ children, ...props }: TextLProps) => {
+  const text = useTextLanguage(children);
+
+  return <Text {...props}>{text}</Text>;
+};
+
+export const LanguageSelector = () => {
+  const { language, setLanguage } = useContext(LanguageContext);
+
+  return (
+    <HStack>
+      <Button
+        onClick={() => setLanguage("fr")}
+        backgroundColor={language === "fr" ? "white" : "transparent"}
+        _hover={{}}
+      >
+        <Image src="/flags/fr.svg" width="1.5em" />
+      </Button>
+      <Button
+        onClick={() => setLanguage("en")}
+        backgroundColor={language === "en" ? "white" : "transparent"}
+        _hover={{}}
+      >
+        <Image src="/flags/en.svg" width="1.5em" />
+      </Button>
+    </HStack>
+  );
 };
