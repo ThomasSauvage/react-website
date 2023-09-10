@@ -1,12 +1,19 @@
 import { ListIcon, ListItem, ListItemProps } from "@chakra-ui/react";
-import { ReactNode } from "react";
 import { BiChevronRightCircle } from "react-icons/bi";
+import { TextL, TextLanguage } from "../utils/Language";
 
-interface LItemProps extends ListItemProps {
-  children: ReactNode;
-}
+type LItemLProps = Omit<ListItemProps, "children"> & {
+  children: TextLanguage;
+};
 
-export const LItem = ({ children, ...props }: LItemProps) => (
+export const LItemL = ({ children, ...props }: LItemLProps) => (
+  <ListItem {...props}>
+    <ListIcon as={BiChevronRightCircle} color="veryAccent" />
+    <TextL as="span">{children}</TextL>
+  </ListItem>
+);
+
+export const LItem = ({ children, ...props }: ListItemProps) => (
   <ListItem {...props}>
     <ListIcon as={BiChevronRightCircle} color="veryAccent" />
     {children}

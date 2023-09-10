@@ -22,14 +22,18 @@ export const LanguageProvider = ({
   );
 };
 
-type TextLanguage = {
+export type TextLanguage = {
   [key in Language]: string;
+};
+
+export const getText = (texts: TextLanguage, language: Language) => {
+  return texts[language];
 };
 
 export const useTextLanguage = (texts: TextLanguage) => {
   const { language } = useContext(LanguageContext);
 
-  return texts[language];
+  return getText(texts, language);
 };
 
 type TextLProps = Omit<TextProps, "children"> & {

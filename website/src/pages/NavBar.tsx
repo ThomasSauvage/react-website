@@ -11,16 +11,14 @@ import {
   MenuItem,
   MenuList,
   Stack,
-  Text,
-  VisuallyHidden,
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { NavLink, useLocation } from "react-router-dom";
 import { routes } from "../App";
-import { LanguageSelector } from "../utils/Language";
+import { LanguageSelector, TextL } from "../utils/Language";
 export const NavBar = () => {
   const { pathname: actualPath } = useLocation();
-  console.log(actualPath);
+
   return (
     <Stack
       direction={{ base: "column", lg: "row" }}
@@ -57,7 +55,7 @@ export const NavBar = () => {
                   _hover={{ color: "accent" }}
                   leftIcon={<Icon as={logo} />}
                 >
-                  {name}
+                  <TextL>{name}</TextL>
                 </Button>
               </NavLink>
             )
@@ -91,13 +89,13 @@ export const NavBar = () => {
                           as={logo}
                           color={actualPath === path ? "white" : "black"}
                         />
-                        <Text
+                        <TextL
                           marginLeft="1em"
                           fontSize="lg"
                           color={actualPath === path ? "white" : "black"}
                         >
                           {name}
-                        </Text>
+                        </TextL>
                       </MenuItem>
                     </NavLink>
                   </Center>
@@ -106,12 +104,10 @@ export const NavBar = () => {
           </MenuList>
         </Menu>
       </Box>
-      <VisuallyHidden>
-        {/* Work in progress */}
-        <Center marginTop="0.5em">
-          <LanguageSelector />
-        </Center>
-      </VisuallyHidden>
+
+      <Center marginTop="0.5em">
+        <LanguageSelector />
+      </Center>
     </Stack>
   );
 };

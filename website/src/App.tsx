@@ -15,10 +15,11 @@ import { NavBar } from "./pages/NavBar";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { Pictures } from "./pages/Pictures";
 import { Projects } from "./pages/Projects";
+import { TextLanguage } from "./utils/Language";
 
 interface RoutePath {
   path: string;
-  name: string | null;
+  name: TextLanguage | null;
   logo?: IconType;
   element: React.ReactNode;
 }
@@ -26,25 +27,25 @@ interface RoutePath {
 export const routes: RoutePath[] = [
   {
     path: "/",
-    name: "Accueil",
+    name: { fr: "Accueil", en: "Home" },
     logo: AiOutlineHome,
     element: <Home />,
   },
   {
     path: "/projects",
-    name: "Projets",
+    name: { fr: "Projets", en: "Projects" },
     logo: MdOutlineScience,
     element: <Projects />,
   },
   {
     path: "/pictures",
-    name: "Photos",
+    name: { fr: "Photos", en: "Pictures" },
     logo: AiOutlinePicture,
     element: <Pictures />,
   },
   {
     path: "/contact",
-    name: "Me contacter",
+    name: { fr: "Me contacter", en: "Contact me" },
     logo: AiOutlinePhone,
     element: <Contact />,
   },
