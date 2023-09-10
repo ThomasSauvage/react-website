@@ -12,7 +12,7 @@ export const Projects = () => {
           justifyContent="space-around"
           flexWrap="wrap"
         >
-          <Image src="/projects/chocapix.png" height="20em" />
+          <Image src="/projects/chocapix.png" maxHeight="20em" />
           <List>
             <LItem>
               Site internet de gestion de stock alimentaire interne à l'Ecole
@@ -32,8 +32,8 @@ export const Projects = () => {
           justifyContent="space-around"
           flexWrap="wrap"
         >
-          <Image src="/projects/dispositif_exp.jpg" height="15em" />
-          <Image src="/projects/simulation.png" height="15em" />
+          <Image src="/projects/dispositif_exp.jpg" maxHeight="15em" />
+          <Image src="/projects/simulation.png" maxHeight="15em" />
           <List>
             <LItem>Projet scientifique en binôme</LItem>
             <LItem>
@@ -58,7 +58,7 @@ export const Projects = () => {
           justifyContent="space-around"
           flexWrap="wrap"
         >
-          <Image src="/projects/telecom.png" height="25em" />
+          <Image src="/projects/telecom.png" maxHeight="25em" />
           <List>
             <LItem>Projet personnel de programmation en Python</LItem>
             <LItem>
@@ -81,7 +81,7 @@ export const Projects = () => {
           justifyContent="space-around"
           flexWrap="wrap"
         >
-          <Image src="/projects/percolation.png" height="20em" />
+          <Image src="/projects/percolation.png" maxHeight="20em" />
           <List>
             <LItem>Projet de recherche en mathématiques</LItem>
             <LItem>Etude de propagations de proche en proche</LItem>
