@@ -66,7 +66,7 @@ export const Home = () => {
           <TextL margin="2em">
             {{
               fr: "Bonjour, je m’appelle Thomas Sauvage, j'ai 21 ans. Je suis étudiant à l’Ecole polytechnique, passionné d’informatique depuis mes 11 ans et de sciences depuis toujours. J’aime comprendre et résoudre les problèmes que je rencontre, et améliorer la qualité des outils que j’utilise au quotidien. J'ai entièrement construit ce site internet avec React, Typescript et Chakra UI.",
-              en: "Hello, my name is Thomas Sauvage, I'm 21 years old. I'm a student at Ecole polytechnique, passionate about computer science since I was 11 and about science since forever. I like to understand and solve the problems I encounter, and improve the quality of the tools I use everyday. I built this website with React, Typescript and Chakra UI.",
+              en: "Good morning, my name is Thomas Sauvage, I'm 21 years old. I'm a student at Ecole polytechnique, passionate about computer science since I was 11 and about science since forever. I like to understand and solve the problems I encounter, and improve the quality of the tools I use everyday. I built this website with React, Typescript and Chakra UI.",
             }}
           </TextL>
         </Flex>
@@ -103,7 +103,7 @@ export const Home = () => {
                   <TextL>
                     {{
                       fr: "Cycle ingénieur polytechnicien",
-                      en: "Engineering degree",
+                      en: "France top-ranking engineering university",
                     }}
                   </TextL>
                 </Td>
@@ -121,8 +121,8 @@ export const Home = () => {
                 <Td whiteSpace="normal">
                   <TextL>
                     {{
-                      fr: "au Lycée Marcelin Berthelot",
-                      en: "at Lycée Marcelin Berthelot",
+                      fr: "Au Lycée Marcelin Berthelot",
+                      en: "At Lycée Marcelin Berthelot",
                     }}
                   </TextL>
                 </Td>
@@ -133,15 +133,15 @@ export const Home = () => {
                   <TextL>
                     {{
                       fr: "Baccalauréat Scientifique",
-                      en: 'Scientific "Baccalauréat" (French high school diploma)',
+                      en: 'Scientific "Baccalauréat"',
                     }}
                   </TextL>
                 </Td>
                 <Td whiteSpace="normal">
                   <TextL>
                     {{
-                      fr: "mention Très Bien",
-                      en: 'Highest qualification ("Very good")',
+                      fr: "Mention Très Bien",
+                      en: "High school leaving exams. With highest honors",
                     }}
                   </TextL>
                 </Td>
@@ -150,11 +150,10 @@ export const Home = () => {
           </Table>
         </TableContainer>
       </Section>
-
-      <Section
-        title={getText({ fr: "Mes compétences", en: "My skills" }, language)}
-      >
-        <Accordion>
+      <Accordion>
+        <Section
+          title={getText({ fr: "Mes compétences", en: "My skills" }, language)}
+        >
           <AccordionLine
             title={getText(
               { fr: "Programmation", en: "Computer programming" },
@@ -168,16 +167,22 @@ export const Home = () => {
                   en: "Programming since 2013 (when I was 11 years old, in MS-DOS)",
                 }}
               </LItemL>
-              <LItemL>
+              <LItemL marginLeft="3em">
                 {{
-                  fr: "Programmation en Python depuis 2018 (mes 15 ans)",
-                  en: "Programming in Python since 2018 (when I was 15 years old)",
+                  fr: "en Python depuis 2018 (mes 15 ans)",
+                  en: "in Python since 2018 (when I was 15 years old)",
                 }}
               </LItemL>
-              <LItemL>
+              <LItemL marginLeft="3em">
                 {{
-                  fr: "Programmation en Ocaml depuis 2020",
-                  en: "Programming in Ocaml since 2020",
+                  fr: "en Ocaml depuis 2020",
+                  en: "in Ocaml since 2020",
+                }}
+              </LItemL>
+              <LItemL marginLeft="3em">
+                {{
+                  fr: "en Java depuis 2023",
+                  en: "in Java since 2023",
                 }}
               </LItemL>
               <LItemL>
@@ -241,7 +246,9 @@ export const Home = () => {
             </List>
           </AccordionLine>
 
-          <AccordionLine title="Artistique">
+          <AccordionLine
+            title={getText({ fr: "Artistique", en: "Artistic" }, language)}
+          >
             <List>
               <LItemL>
                 {{
@@ -276,39 +283,37 @@ export const Home = () => {
             <List>
               <LItemL>
                 {{
-                  fr: "Langue maternelle français",
-                  en: "Native language French",
+                  fr: "Langue maternelle: Français",
+                  en: "Native language: French",
                 }}
               </LItemL>
               <LItemL>
                 {{
-                  fr: "Très bon niveau en anglais",
-                  en: "Very good level in English",
+                  fr: "Maîtrise (C1/C2): Anglais",
+                  en: "Proficient: English",
                 }}
               </LItemL>
               <LItemL>
                 {{
-                  fr: "Niveau correct en espagnol",
-                  en: "Correct level in Spanish",
+                  fr: "Avancé (B1/B2): Espagnol",
+                  en: "Advanced: Spanish",
                 }}
               </LItemL>
             </List>
           </AccordionLine>
-        </Accordion>
-      </Section>
+        </Section>
 
-      <Section
-        title={getText(
-          { fr: "Mes expériences", en: "My experiences" },
-          language
-        )}
-      >
-        <Accordion>
+        <Section
+          title={getText(
+            { fr: "Mes expériences", en: "My experiences" },
+            language
+          )}
+        >
           <AccordionLine
             title={getText(
               {
                 fr: "Binet Réseau • Développeur web • Mai 2023 - ...",
-                en: "Binet Réseau • Web developer • Mai 2023 - ...",
+                en: "Binet Réseau • Web developer • May 2023 - ...",
               },
               language
             )}
@@ -409,7 +414,15 @@ export const Home = () => {
             </List>
           </AccordionLine>
 
-          <AccordionLine title="Photographe pour la mouette bâillonnée • 2017 - 2018">
+          <AccordionLine
+            title={getText(
+              {
+                fr: "Photographe pour La Mouette Bâillonnée • 2017 - 2018",
+                en: 'Photographer for "La Mouette Bâillonnée" • 2017 - 2018',
+              },
+              language
+            )}
+          >
             <List>
               <LItemL>
                 {{ fr: "Journal étudiant", en: "Student newspaper" }}
@@ -454,8 +467,8 @@ export const Home = () => {
               </LItemL>
             </List>
           </AccordionLine>
-        </Accordion>
-      </Section>
+        </Section>
+      </Accordion>
     </Grid>
   );
 };
