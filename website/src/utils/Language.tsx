@@ -5,7 +5,7 @@ import { usePersistentState } from "./usePersistantState";
 type Language = "fr" | "en";
 
 export const LanguageContext = React.createContext({
-  language: "fr" as Language,
+  language: "en" as Language,
   setLanguage: (language: Language) => {},
 });
 
@@ -15,7 +15,7 @@ export const LanguageProvider = ({
   children: React.ReactNode;
 }) => {
   const [language, setLanguage] = usePersistentState<Language>(
-    "fr",
+    "en",
     "language"
   );
 

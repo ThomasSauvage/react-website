@@ -1,11 +1,8 @@
 import { Button, Flex, Grid, Image, Link } from "@chakra-ui/react";
-import { useContext } from "react";
 import { Section } from "../components/Section";
-import { LanguageContext, TextL, getText } from "../utils/Language";
+import { TextL } from "../utils/Language";
 
 export const Contact = () => {
-  const { language } = useContext(LanguageContext);
-
   const email = [
     "mai",
     "lto:",
@@ -18,11 +15,10 @@ export const Contact = () => {
     "com",
   ];
   const phone = ["t", "el:", "+336", "61", "63", "52", "92"];
+
   return (
     <Grid gap="3em">
-      <Section
-        title={getText({ fr: "Mes coordonnées", en: "My contact" }, language)}
-      >
+      <Section title={{ fr: "Mes coordonnées", en: "My contact" }}>
         <Flex alignItems="center" flexWrap="wrap">
           <TextL>
             {{
@@ -48,8 +44,8 @@ export const Contact = () => {
         <Flex alignItems="center" flexWrap="wrap">
           <TextL as="span">
             {{
-              fr: " Ou par téléphone: ",
-              en: " Or by phone: ",
+              fr: " Ou par téléphone (WhatsApp, Signal...): ",
+              en: " Or by phone (WhatsApp, Signal...): ",
             }}
           </TextL>
           <Button
@@ -67,12 +63,8 @@ export const Contact = () => {
           </Button>
         </Flex>
       </Section>
-      <Section
-        title={getText(
-          { fr: "Mes réseaux sociaux", en: "My social media" },
-          language
-        )}
-      >
+
+      <Section title={{ fr: "Mes réseaux sociaux", en: "My social media" }}>
         <TextL as="span">
           {{
             fr: "Vous pouvez aussi m'ajouter sur LinkedIn en cliquant sur ce lien: ",

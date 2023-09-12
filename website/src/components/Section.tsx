@@ -6,19 +6,24 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
+import { TextLanguage, useTextLanguage } from "../utils/Language";
 
-interface SectionProps extends CardProps {
-  title?: string;
+type SectionProps = Omit<CardProps, "title"> & {
+  title?: TextLanguage;
   children: ReactNode;
-}
-export const Section = ({ title, children, ...props }: SectionProps) => (
-  <Card margin="1em" {...props}>
-    {title && (
-      <CardHeader>
-        <Heading color="veryAccent">{title}</Heading>
-      </CardHeader>
-    )}
+};
+export const Section = ({ title, children, ...props }: SectionProps) => {
+  const stringTitle = useTextLanguage(title ?? { fr: "", en: "" });
 
-    <CardBody>{children}</CardBody>
-  </Card>
-);
+  return (
+    <Card margin="1em" {...props}>
+      {title && (
+        <CardHeader>
+          <Heading color="veryAccent">{stringTitle}</Heading>
+        </CardHeader>
+      )}
+
+      <CardBody>{children}</CardBody>
+    </Card>
+  );
+};

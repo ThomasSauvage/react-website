@@ -9,9 +9,7 @@ export const Skills = () => {
   const { language } = useContext(LanguageContext);
 
   return (
-    <Section
-      title={getText({ fr: "Mes compétences", en: "My skills" }, language)}
-    >
+    <Section title={{ fr: "Mes compétences", en: "My skills" }}>
       <AccordionLine
         title={getText(
           { fr: "Programmation", en: "Computer programming" },
