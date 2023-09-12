@@ -37,8 +37,8 @@ export const Academic = () => {
               <Td whiteSpace="normal">
                 <TextL>
                   {{
-                    fr: "Cycle ingénieur polytechnicien",
-                    en: "France top-ranking engineering university",
+                    fr: "2ème année • Cycle ingénieur polytechnicien",
+                    en: "Second year (Master 1) • France top-ranking engineering university",
                   }}
                 </TextL>
               </Td>

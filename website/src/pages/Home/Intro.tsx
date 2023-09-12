@@ -59,7 +59,7 @@ export const Intro = () => {
         >
           {{
             fr: "Je suis actuellement à la recherche d'un stage de 3 mois dans le cadre de ma deuxième année à l'Ecole polytechnique. Je suis ouvert à toute proposition dans les domaines de l'informatique: dévelopement web, intelligence artificielle, simulation... N'hésitez pas à me contacter.",
-            en: "I am currently looking for a 3-month internship as part of my second year at Ecole polytechnique. I am open to any proposal in the field of computer science: web development, artificial intelligence, simulation... Do not hesitate to contact me.",
+            en: "I am currently looking for a 3-month internship as part of my second year (Master 1) at Ecole polytechnique . I am open to any proposal in the field of computer science: web development, artificial intelligence, simulation... Do not hesitate to contact me.",
           }}
         </TextL>
       </Card>
