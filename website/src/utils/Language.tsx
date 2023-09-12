@@ -1,5 +1,6 @@
 import { Button, HStack, Image, Text, TextProps } from "@chakra-ui/react";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
+import { usePersistentState } from "./usePersistantState";
 
 type Language = "fr" | "en";
 
@@ -13,7 +14,10 @@ export const LanguageProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [language, setLanguage] = useState<Language>("fr");
+  const [language, setLanguage] = usePersistentState<Language>(
+    "fr",
+    "language"
+  );
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
