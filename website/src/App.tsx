@@ -10,7 +10,7 @@ import {
 import { MdOutlineScience } from "react-icons/md";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { Contact } from "./pages/Contact";
-import { Home } from "./pages/Home";
+import { Home } from "./pages/Home/Home";
 import { NavBar } from "./pages/NavBar";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { Pictures } from "./pages/Pictures";
