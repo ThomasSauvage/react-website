@@ -50,7 +50,7 @@ export const LanguageSelector = () => {
   const { language, setLanguage } = useContext(LanguageContext);
 
   return (
-    <HStack>
+    <HStack width="10em" justifyContent="center">
       <Button
         onClick={() => setLanguage("fr")}
         backgroundColor={language === "fr" ? "white" : "transparent"}
