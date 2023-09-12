@@ -1,13 +1,10 @@
 import {
   Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box,
+  Badge,
+  Card,
+  CardHeader,
   Flex,
   Grid,
-  Heading,
   Image,
   Link,
   List,
@@ -19,58 +16,71 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
-import { ReactNode, useContext } from "react";
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AccordionLine } from "../components/AccordionLine";
 import { LItem, LItemL } from "../components/List";
 import { Section } from "../components/Section";
 import { LanguageContext, TextL, getText } from "../utils/Language";
-
-const AccordionLine = ({
-  title,
-  children,
-}: {
-  title: string;
-  children: ReactNode;
-}) => (
-  <AccordionItem>
-    <Heading>
-      <AccordionButton>
-        <Box as="span" flex="1" textAlign="left">
-          <Heading size="sm" color="veryAccent" marginRight="1em">
-            {title}
-          </Heading>
-        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </Heading>
-    <AccordionPanel pb={4}>{children}</AccordionPanel>
-  </AccordionItem>
-);
 
 export const Home = () => {
   const { language } = useContext(LanguageContext);
   return (
     <Grid alignContent="center" gap="3em" marginBottom="8em">
-      <Section>
-        <Flex
-          flexDirection={{ base: "column", md: "row" }}
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Image
-            src="/photo.jpg"
-            alt="Thomas Sauvage"
-            boxSize="14em"
-            borderRadius="full"
-          />
-          <TextL margin="2em">
+      <Flex
+        justifyContent="center"
+        flexDirection={{ base: "column", xl: "row" }}
+      >
+        <Section>
+          <Flex
+            flexDirection={{ base: "column", md: "row" }}
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Image
+              src="/photo.jpg"
+              alt="Thomas Sauvage"
+              boxSize="14em"
+              borderRadius="full"
+            />
+            <TextL margin="2em">
+              {{
+                fr: "Bonjour, je m’appelle Thomas Sauvage, j'ai 21 ans. Je suis étudiant à l’Ecole polytechnique, passionné d’informatique depuis mes 11 ans et de sciences depuis toujours. J’aime comprendre et résoudre les problèmes que je rencontre, et améliorer la qualité des outils que j’utilise au quotidien. J'ai entièrement construit ce site internet avec React, Typescript et Chakra UI.",
+                en: "Good morning, my name is Thomas Sauvage, I'm 21 years old. I'm a student at Ecole polytechnique, passionate about computer science since I was 11 and about science since forever. I like to understand and solve the problems I encounter, and improve the quality of the tools I use everyday. I built this website with React, Typescript and Chakra UI.",
+              }}
+            </TextL>
+          </Flex>
+        </Section>
+
+        <Card background="accent" margin="1em">
+          <CardHeader>
+            <Badge
+              variant="subtle"
+              backgroundColor="veryAccent"
+              color="white"
+              padding="0.5em"
+            >
+              <TextL>
+                {{
+                  fr: "Recherche de stage • Juin - Fin août 2024",
+                  en: "Internship • June - End of August 2024",
+                }}
+              </TextL>
+            </Badge>
+          </CardHeader>
+          <TextL
+            marginRight="2em"
+            marginLeft="2em"
+            marginBottom="2em"
+            color="white"
+          >
             {{
-              fr: "Bonjour, je m’appelle Thomas Sauvage, j'ai 21 ans. Je suis étudiant à l’Ecole polytechnique, passionné d’informatique depuis mes 11 ans et de sciences depuis toujours. J’aime comprendre et résoudre les problèmes que je rencontre, et améliorer la qualité des outils que j’utilise au quotidien. J'ai entièrement construit ce site internet avec React, Typescript et Chakra UI.",
-              en: "Good morning, my name is Thomas Sauvage, I'm 21 years old. I'm a student at Ecole polytechnique, passionate about computer science since I was 11 and about science since forever. I like to understand and solve the problems I encounter, and improve the quality of the tools I use everyday. I built this website with React, Typescript and Chakra UI.",
+              fr: "Je suis actuellement à la recherche d'un stage de 3 mois dans le cadre de ma deuxième année à l'Ecole polytechnique. Je suis ouvert à toute proposition dans les domaines de l'informatique: dévelopement web, intelligence artificielle, ... N'hésitez pas à me contacter.",
+              en: "I am currently looking for a 3-month internship as part of my second year at Ecole polytechnique. I am open to any proposal in the field of computer science: web development, artificial intelligence, ... Do not hesitate to contact me.",
             }}
           </TextL>
-        </Flex>
-      </Section>
+        </Card>
+      </Flex>
 
       <Section
         title={getText(
@@ -332,8 +342,13 @@ export const Home = () => {
                     en: "Development of a food stock management tool in Typescript, React and Adonis, see my ",
                   }}
                 </TextL>
-                <NavLink to="/projects" color="veryAccent">
-                  projets
+                <NavLink to="/projects">
+                  <TextL as="span" color="accent">
+                    {{
+                      fr: "projets",
+                      en: "projects",
+                    }}
+                  </TextL>
                 </NavLink>
               </LItem>
             </List>
@@ -407,8 +422,13 @@ export const Home = () => {
                     en: "See my ",
                   }}
                 </TextL>
-                <NavLink to="/projects" color="veryAccent">
-                  projets
+                <NavLink to="/projects">
+                  <TextL as="span" color="accent">
+                    {{
+                      fr: "projets",
+                      en: "projects",
+                    }}
+                  </TextL>
                 </NavLink>
               </LItem>
             </List>

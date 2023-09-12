@@ -1,14 +1,18 @@
-import { Card, CardBody, CardHeader, Heading } from "@chakra-ui/react";
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  CardProps,
+  Heading,
+} from "@chakra-ui/react";
 import { ReactNode } from "react";
 
-export const Section = ({
-  title,
-  children,
-}: {
+interface SectionProps extends CardProps {
   title?: string;
   children: ReactNode;
-}) => (
-  <Card>
+}
+export const Section = ({ title, children, ...props }: SectionProps) => (
+  <Card margin="1em" {...props}>
     {title && (
       <CardHeader>
         <Heading color="veryAccent">{title}</Heading>
