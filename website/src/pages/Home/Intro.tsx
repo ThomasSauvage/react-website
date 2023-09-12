@@ -17,12 +17,20 @@ export const Intro = () => {
             boxSize="14em"
             borderRadius="full"
           />
-          <TextL margin="2em">
-            {{
-              fr: "Bonjour, je m’appelle Thomas Sauvage, j'ai 21 ans. Je suis étudiant à l’Ecole polytechnique, passionné d’informatique depuis mes 11 ans et de sciences depuis toujours. J’aime comprendre et résoudre les problèmes que je rencontre, et améliorer la qualité des outils que j’utilise au quotidien. J'ai entièrement construit ce site internet avec React, Typescript et Chakra UI.",
-              en: "Hello, my name is Thomas Sauvage, I'm 21 years old. I'm a student at Ecole polytechnique, passionate about computer science since I was 11 and about science since forever. I like to understand and solve the problems I encounter, and improve the quality of the tools I use everyday. I built this website with React, Typescript and Chakra UI.",
-            }}
-          </TextL>
+          <div>
+            <TextL margin="2em 2em 1em 2em">
+              {{
+                fr: "Bonjour,",
+                en: "Hello,",
+              }}
+            </TextL>
+            <TextL margin="0 2em 2em 2em">
+              {{
+                fr: "Je m’appelle Thomas Sauvage, j'ai 21 ans. Je suis étudiant à l’Ecole polytechnique, passionné d’informatique depuis mes 11 ans et de sciences depuis toujours. J’aime comprendre et résoudre les problèmes que je rencontre, et améliorer la qualité des outils que j’utilise au quotidien. J'ai entièrement construit ce site internet avec React, Typescript et Chakra UI.",
+                en: "I am Thomas Sauvage, a student at Ecole polytechnique of 21 years old. I'm passionate about computer science since I was 11 and about science since forever. I like to understand and solve the problems I encounter, and improve the quality of the tools I use everyday. I built this website with React, Typescript and Chakra UI.",
+              }}
+            </TextL>
+          </div>
         </Flex>
       </Section>
 
@@ -32,6 +40,7 @@ export const Intro = () => {
             variant="subtle"
             backgroundColor="veryAccent"
             color="white"
+            margin="1em"
             padding="0.5em"
           >
             <TextL>

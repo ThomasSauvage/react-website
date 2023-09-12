@@ -78,8 +78,8 @@ export const NavBar = () => {
             {routes.map(
               ({ name, path, logo }) =>
                 name && (
-                  <Center>
-                    <NavLink to={path} key={path}>
+                  <Center key={path}>
+                    <NavLink to={path}>
                       <MenuItem
                         height="3em"
                         background={actualPath === path ? "accent" : ""}

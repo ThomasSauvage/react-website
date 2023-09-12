@@ -10,9 +10,7 @@ export const Experiences = () => {
   const { language } = useContext(LanguageContext);
 
   return (
-    <Section
-      title={getText({ fr: "Mes expériences", en: "My experiences" }, language)}
-    >
+    <Section title={{ fr: "Mes expériences", en: "My experiences" }}>
       <AccordionLine
         title={getText(
           {

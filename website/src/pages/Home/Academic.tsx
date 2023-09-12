@@ -7,20 +7,12 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
-import { useContext } from "react";
 import { Section } from "../../components/Section";
-import { LanguageContext, TextL, getText } from "../../utils/Language";
+import { TextL } from "../../utils/Language";
 
 export const Academic = () => {
-  const { language } = useContext(LanguageContext);
-
   return (
-    <Section
-      title={getText(
-        { fr: "Ma formation", en: "My academic background" },
-        language
-      )}
-    >
+    <Section title={{ fr: "Ma formation", en: "My academic background" }}>
       <TableContainer>
         <Table variant="striped">
           <Thead width="auto">
