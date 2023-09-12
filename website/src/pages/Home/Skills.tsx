@@ -124,6 +124,12 @@ export const Skills = () => {
           </LItemL>
           <LItemL>
             {{
+              fr: "Cours de design",
+              en: "Design courses",
+            }}
+          </LItemL>
+          <LItemL>
+            {{
               fr: "Guitare",
               en: "Guitar",
             }}
