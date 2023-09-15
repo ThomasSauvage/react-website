@@ -150,7 +150,7 @@ export const Contact = () => {
 
       <Section
         title={{
-          fr: "M'envoyer moi un message directement",
+          fr: "M'envoyer un message directement",
           en: "Send me a message directly",
         }}
       >
