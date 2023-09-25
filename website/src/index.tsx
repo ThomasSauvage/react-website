@@ -16,6 +16,10 @@ const accent = "#8783d1";
 const veryAccent = "#6a58a5";
 
 const theme = extendTheme({
+  fonts: {
+    body: "'Montserrat', system-ui, sans-serif",
+    heading: "'Montserrat', system-ui, sans-serif",
+  },
   colors: {
     bgDarker,
     accent,
