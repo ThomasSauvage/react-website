@@ -6,7 +6,7 @@ import { Skills } from "./Skills";
 
 export const Home = () => {
   return (
-    <Grid alignContent="center" gap="3em" marginBottom="8em">
+    <Grid alignContent="center" gap="3em">
       <Intro />
       <Academic />
 
