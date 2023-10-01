@@ -14,8 +14,9 @@ export const LanguageProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
+  console.log(navigator.language);
   const [language, setLanguage] = usePersistentState<Language>(
-    "en",
+    navigator.language.toLowerCase().includes("fr") ? "fr" : "en",
     "language"
   );
 

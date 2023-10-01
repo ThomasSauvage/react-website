@@ -70,8 +70,8 @@ export const Skills = () => {
           </LItem>
           <LItemL>
             {{
-              fr: "Cybersécurité : Cryptographie asymétrique & symétrique, hachage, utilisation d’un gestionnaire de mot de passe et d’une clef physique (yubikey)",
-              en: "Cybersecurity: Asymmetric & symmetric cryptography, hashing, use of a password manager and a physical key (yubikey)",
+              fr: "Cybersécurité : Cryptographie asymétrique & symétrique, hachage, utilisation d’un gestionnaire de mot de passe et d’une clef physique (YubiKey)",
+              en: "Cybersecurity: Asymmetric & symmetric cryptography, hashing, use of a password manager and a physical key (YubiKey)",
             }}
           </LItemL>
         </List>
@@ -89,12 +89,6 @@ export const Skills = () => {
             {{
               fr: "Impression 3D",
               en: "3D printing",
-            }}
-          </LItemL>
-          <LItemL>
-            {{
-              fr: "Permis de pilote de drones",
-              en: "Drone pilot license",
             }}
           </LItemL>
         </List>
@@ -150,13 +144,35 @@ export const Skills = () => {
           <LItemL>
             {{
               fr: "Maîtrise (C1/C2): Anglais",
-              en: "Proficient: English",
+              en: "Proficient (C1/C2): English",
             }}
           </LItemL>
           <LItemL>
             {{
               fr: "Avancé (B1/B2): Espagnol",
-              en: "Advanced: Spanish",
+              en: "Intermediate (B1/B2): Spanish",
+            }}
+          </LItemL>
+        </List>
+      </AccordionLine>
+
+      <AccordionLine
+        title={getText(
+          { fr: "Certifications", en: "Certifications" },
+          language
+        )}
+      >
+        <List>
+          <LItemL>
+            {{
+              fr: "Permis de pilote de drones",
+              en: "Drone pilot license",
+            }}
+          </LItemL>
+          <LItemL>
+            {{
+              fr: "Prévention et secours civiques (PSC1)",
+              en: "First aid certificate (PSC1)",
             }}
           </LItemL>
         </List>
