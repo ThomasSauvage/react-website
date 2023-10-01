@@ -4,11 +4,16 @@ import { TextL, TextLanguage } from "../utils/Language";
 
 type LItemLProps = Omit<ListItemProps, "children"> & {
   children: TextLanguage;
+  iconColor?: string;
 };
 
-export const LItemL = ({ children, ...props }: LItemLProps) => (
+export const LItemL = ({
+  children,
+  iconColor = "veryAccent",
+  ...props
+}: LItemLProps) => (
   <ListItem {...props}>
-    <ListIcon as={BiChevronRightCircle} color="veryAccent" />
+    <ListIcon as={BiChevronRightCircle} color={iconColor} />
     <TextL as="span">{children}</TextL>
   </ListItem>
 );

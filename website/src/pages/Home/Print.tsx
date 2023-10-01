@@ -11,8 +11,8 @@ export const Print = () => {
       <Center>
         <TextL as="span" marginRight="0.8em">
           {{
-            fr: "Vous pouvez aussi télécharger mon CV en format PDF en cliquant ",
-            en: "You can also download my resume in PDF format by clicking ",
+            fr: "Vous pouvez aussi télécharger mon CV au format PDF",
+            en: "You can also download my resume as a PDF",
           }}
         </TextL>
         <Link
@@ -22,7 +22,7 @@ export const Print = () => {
           )}.pdf`}
           target="_blank"
         >
-          <Button bg="accent">
+          <Button bg="accent" color="white">
             <TextL as="span">
               {{
                 fr: "ici",
