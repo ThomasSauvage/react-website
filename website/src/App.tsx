@@ -63,6 +63,7 @@ const App = () => {
       <Grid
         marginLeft={{ base: 0, lg: "10em" }}
         marginRight={{ base: 0, lg: "10em" }}
+        marginBottom="15em"
       >
         <NavBar />
         <Routes>
