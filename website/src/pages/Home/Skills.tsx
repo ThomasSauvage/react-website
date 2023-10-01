@@ -43,15 +43,21 @@ export const Skills = () => {
           </LItemL>
           <LItemL>
             {{
-              fr: "Développement de sites internet en HTML&CSS avec gestion du backend en Django (Python)",
-              en: "Websites development in HTML&CSS with a Django (Python) backend",
+              fr: "Développement de sites internet",
+              en: "Websites development",
             }}
           </LItemL>
-          <LItem>
+          <LItemL marginLeft="3em">
+            {{
+              fr: "en HTML&CSS avec gestion du backend en Django (Python)",
+              en: "in HTML&CSS with a Django (Python) backend",
+            }}
+          </LItemL>
+          <LItem marginLeft="3em">
             <TextL as="span">
               {{
-                fr: "Développement de sites internet en Typescript React pour le ",
-                en: "Websites development in Typescript React for the ",
+                fr: "en Typescript React pour le ",
+                en: "in Typescript React for the ",
               }}
             </TextL>
             <Link
