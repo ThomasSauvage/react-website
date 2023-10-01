@@ -77,7 +77,7 @@ export const Experiences = () => {
           </LItemL>
           <LItemL>
             {{
-              fr: "Professeur en lycée militaire: Pédagogie, travail d'équipe",
+              fr: "Professeur en lycée militaire : Pédagogie, travail d'équipe",
               en: "Teacher in military high school: Pedagogy, teamwork",
             }}
           </LItemL>
