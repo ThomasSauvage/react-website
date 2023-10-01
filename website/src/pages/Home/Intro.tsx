@@ -1,4 +1,5 @@
-import { Badge, Card, CardHeader, Flex, Image } from "@chakra-ui/react";
+import { Badge, Card, CardHeader, Flex, Image, List } from "@chakra-ui/react";
+import { LItemL } from "../../components/List";
 import { Section } from "../../components/Section";
 import { TextL } from "../../utils/Language";
 
@@ -34,7 +35,7 @@ export const Intro = () => {
         </Flex>
       </Section>
 
-      <Card background="accent" margin="1em">
+      <Card background="accent" margin="1em" minWidth="40%">
         <CardHeader>
           <Badge
             variant="subtle"
@@ -51,17 +52,67 @@ export const Intro = () => {
             </TextL>
           </Badge>
         </CardHeader>
-        <TextL
+        <List
           marginRight="2em"
           marginLeft="2em"
           marginBottom="2em"
           color="white"
         >
-          {{
-            fr: "Je suis actuellement à la recherche d'un stage de 3 mois dans le cadre de ma deuxième année à l'Ecole polytechnique. Je suis ouvert à toute proposition dans les domaines de l'informatique: dévelopement web, intelligence artificielle, simulation... N'hésitez pas à me contacter.",
-            en: "I am currently looking for a 3-month internship as part of my second year (Master 1) at Ecole polytechnique . I am open to any proposal in the field of computer science: web development, artificial intelligence, simulation... Do not hesitate to contact me.",
-          }}
-        </TextL>
+          <LItemL iconColor="white">
+            {{
+              fr: "Actuellement à la recherche d'un stage de 3 mois",
+              en: "Currently looking for a 3-month internship",
+            }}
+          </LItemL>
+          <LItemL iconColor="white">
+            {{
+              fr: "Stage de deuxième année de l'Ecole polytechnique",
+              en: "Second-year internship of Ecole polytechnique",
+            }}
+          </LItemL>
+          <LItemL iconColor="white">
+            {{
+              fr: "Ouvert à toute proposition dans les domaines de l'informatique :",
+              en: "Open to any proposal in the fields of computer science:",
+            }}
+          </LItemL>
+          <LItemL iconColor="white" marginLeft="3em">
+            {{
+              fr: "Développement web",
+              en: "Web development",
+            }}
+          </LItemL>
+          <LItemL iconColor="white" marginLeft="3em">
+            {{
+              fr: "Développement de software",
+              en: "Software development",
+            }}
+          </LItemL>
+          <LItemL iconColor="white" marginLeft="3em">
+            {{
+              fr: "Intelligence artificielle",
+              en: "Artificial intelligence",
+            }}
+          </LItemL>
+          <LItemL iconColor="white" marginLeft="3em">
+            {{
+              fr: "Simulation",
+              en: "Simulation",
+            }}
+          </LItemL>
+          <LItemL iconColor="white" marginLeft="3em">
+            {{
+              fr: "Autre...",
+              en: "Other...",
+            }}
+          </LItemL>
+          <LItemL iconColor="white">
+            {{
+              fr: "N'hésitez pas à me contacter",
+              en: "Feel free to contact me",
+            }}
+          </LItemL>
+        </List>
       </Card>
     </Flex>
   );
