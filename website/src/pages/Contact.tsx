@@ -16,6 +16,7 @@ import StringInputRhf from "../utils/StringInputRhf";
 import TextareaRhf from "../utils/TextareaRhf";
 import { ContactForm, useContactForm } from "../utils/contactForm";
 
+/** Page: Contact */
 export const Contact = () => {
   const {
     getValues,
@@ -27,6 +28,7 @@ export const Contact = () => {
   const showToast = useToast();
   const { language } = useContext(LanguageContext);
 
+  // The message is sent to a service called ntfy.sh, to receive the message on my phone
   const { mutate } = useMutation(
     (data: ContactForm) =>
       fetch("https://ntfy.sh/4A1Kc6c0R16GEM33vOy6y4RTx73Nvt3E", {
@@ -69,6 +71,9 @@ export const Contact = () => {
     }
   );
 
+  // The email and phone are stored in an array to avoid bots to find them
+  // Moreover, they are showed on the page as a picture
+  // The email and phone are concatenated when the user clicks on the picture, for the link to work
   const email = [
     "mai",
     "lto:",

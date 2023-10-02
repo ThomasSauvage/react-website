@@ -5,15 +5,18 @@ import {
   CardProps,
   Heading,
 } from "@chakra-ui/react";
-import { ReactNode } from "react";
-import { TextLanguage, useTextLanguage } from "../utils/Language";
+import { ReactNode, useContext } from "react";
+import { LanguageContext, TextLanguage, getText } from "../utils/Language";
 
 type SectionProps = Omit<CardProps, "title"> & {
   title?: TextLanguage;
   children: ReactNode;
 };
+
+/** A styled card */
 export const Section = ({ title, children, ...props }: SectionProps) => {
-  const stringTitle = useTextLanguage(title ?? { fr: "", en: "" });
+  const { language } = useContext(LanguageContext);
+  const stringTitle = getText(title ?? { fr: "", en: "" }, language);
 
   return (
     <Card margin="1em" {...props}>

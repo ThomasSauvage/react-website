@@ -9,6 +9,10 @@ export const LanguageContext = React.createContext({
   setLanguage: (language: Language) => {},
 });
 
+/** Context provider for:
+ *  - language: Current language of the page
+ *  - setLanguage: To change the language
+ */
 export const LanguageProvider = ({
   children,
 }: {
@@ -27,30 +31,31 @@ export const LanguageProvider = ({
   );
 };
 
+/** Object containing text in different languages */
 export type TextLanguage = {
   [key in Language]: string;
 };
 
+/** Get the text in the current language,
+ *  Used for type safety
+ */
 export const getText = (texts: TextLanguage, language: Language) => {
   return texts[language];
-};
-
-export const useTextLanguage = (texts: TextLanguage) => {
-  const { language } = useContext(LanguageContext);
-
-  return getText(texts, language);
 };
 
 type TextLProps = Omit<TextProps, "children"> & {
   children: TextLanguage;
 };
 
+/** Text component with multiple languages support */
 export const TextL = ({ children, ...props }: TextLProps) => {
-  const text = useTextLanguage(children);
+  const { language } = useContext(LanguageContext);
+  const text = getText(children, language);
 
   return <Text {...props}>{text}</Text>;
 };
 
+/** Fancy component to select the language */
 export const LanguageSelector = () => {
   const { language, setLanguage } = useContext(LanguageContext);
 

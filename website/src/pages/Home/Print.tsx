@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Section } from "../../components/Section";
 import { LanguageContext, TextL, getText } from "../../utils/Language";
 
+/** Section: Home > Print */
 export const Print = () => {
   const { language } = useContext(LanguageContext);
 

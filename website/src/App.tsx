@@ -17,6 +17,7 @@ import { Pictures } from "./pages/Pictures";
 import { Projects } from "./pages/Projects";
 import { TextLanguage } from "./utils/Language";
 
+/** A route of the app */
 interface RoutePath {
   path: string;
   name: TextLanguage | null;
@@ -24,6 +25,11 @@ interface RoutePath {
   element: React.ReactNode;
 }
 
+/** List of all routes for this app,
+ *  with logo and name for the NavBar
+ *
+ *  If the name is null, the route is not displayed in the NavBar
+ */
 export const routes: RoutePath[] = [
   {
     path: "/",

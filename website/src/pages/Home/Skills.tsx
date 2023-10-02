@@ -5,6 +5,7 @@ import { LItem, LItemL } from "../../components/List";
 import { Section } from "../../components/Section";
 import { LanguageContext, TextL, getText } from "../../utils/Language";
 
+/** Section: Home > Skills */
 export const Skills = () => {
   const { language } = useContext(LanguageContext);
 

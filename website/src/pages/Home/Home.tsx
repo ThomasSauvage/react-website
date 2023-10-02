@@ -5,6 +5,7 @@ import { Intro } from "./Intro";
 import { Print } from "./Print";
 import { Skills } from "./Skills";
 
+/** Page: Home */
 export const Home = () => {
   return (
     <Grid alignContent="center" gap="3em">

@@ -10,6 +10,9 @@ const zContactForm = z.object({
 
 export type ContactForm = z.infer<typeof zContactForm>;
 
+/** Hook to get the react-hook-form contact form
+ *  with validation from zod
+ */
 export const useContactForm = () => {
   return useForm<ContactForm>({
     resolver: zodResolver(zContactForm),

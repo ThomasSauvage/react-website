@@ -10,6 +10,7 @@ import {
 import { Section } from "../../components/Section";
 import { TextL } from "../../utils/Language";
 
+/** Section: Home > Academic */
 export const Academic = () => {
   return (
     <Section title={{ fr: "Ma formation", en: "My academic background" }}>
