@@ -81,6 +81,12 @@ export const Skills = () => {
               en: "Cybersecurity: Asymmetric & symmetric cryptography, hashing, use of a password manager and a physical key (YubiKey)",
             }}
           </LItemL>
+          <LItemL>
+            {{
+              fr: "Développement en équipe (git, GitHub, GitLab)",
+              en: "Team development (git, GitHub, GitLab)",
+            }}
+          </LItemL>
         </List>
       </AccordionLine>
 
