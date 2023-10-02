@@ -9,6 +9,7 @@ import {
 } from "react-icons/ai";
 import { MdOutlineScience } from "react-icons/md";
 import { HashRouter, Route, Routes } from "react-router-dom";
+import packageJson from "../package.json";
 import { Contact } from "./pages/Contact";
 import { Home } from "./pages/Home/Home";
 import { NavBar } from "./pages/NavBar";
@@ -16,7 +17,6 @@ import { NotFoundPage } from "./pages/NotFoundPage";
 import { Pictures } from "./pages/Pictures";
 import { Projects } from "./pages/Projects";
 import { TextLanguage } from "./utils/Language";
-
 /** A route of the app */
 interface RoutePath {
   path: string;
@@ -64,6 +64,9 @@ export const routes: RoutePath[] = [
 
 const App = () => {
   // HashRouter replaces BrowserRouter to allow the app to be hosted on GitHub Pages
+
+  console.log(` -> Welcome to my website, version ${packageJson.version}`);
+
   return (
     <HashRouter>
       <Grid
