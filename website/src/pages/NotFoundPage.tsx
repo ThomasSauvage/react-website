@@ -1,6 +1,6 @@
-import React from "react";
 import { Flex, Heading, Text } from "@chakra-ui/react";
 
+/** Page: Not found */
 export const NotFoundPage = () => {
   return (
     <Flex flexDirection="column" alignItems="center" margin="3em">

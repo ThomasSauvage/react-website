@@ -3,6 +3,7 @@ import { LItemL } from "../../components/List";
 import { Section } from "../../components/Section";
 import { TextL } from "../../utils/Language";
 
+/** Section: Home > Intro */
 export const Intro = () => {
   return (
     <Flex justifyContent="center" flexDirection={{ base: "column", xl: "row" }}>

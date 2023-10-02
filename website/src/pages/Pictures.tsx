@@ -21,7 +21,8 @@ const pictures = [
   "8.jpg",
 ];
 
-const Pic = ({ name }: { name: string }) => {
+/** A single picture, showed in the picture page */
+const OnePicture = ({ name }: { name: string }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
@@ -54,11 +55,12 @@ const Pic = ({ name }: { name: string }) => {
   );
 };
 
+/** Page: Pictures */
 export const Pictures = () => {
   return (
     <Flex flexWrap="wrap" gap="1em" justifyContent="space-around">
       {pictures.map((name) => (
-        <Pic name={name} key={name} />
+        <OnePicture name={name} key={name} />
       ))}
     </Flex>
   );

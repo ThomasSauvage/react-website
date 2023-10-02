@@ -6,6 +6,7 @@ import { LItem, LItemL } from "../../components/List";
 import { Section } from "../../components/Section";
 import { LanguageContext, TextL, getText } from "../../utils/Language";
 
+/** The experiences section of the Home page */
 export const Experiences = () => {
   const { language } = useContext(LanguageContext);
 

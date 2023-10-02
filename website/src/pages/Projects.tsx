@@ -2,6 +2,7 @@ import { Flex, Image, List, VStack } from "@chakra-ui/react";
 import { LItemL } from "../components/List";
 import { Section } from "../components/Section";
 
+/** Page: Projects */
 export const Projects = () => {
   return (
     <VStack>

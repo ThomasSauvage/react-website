@@ -16,6 +16,12 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { NavLink, useLocation } from "react-router-dom";
 import { routes } from "../App";
 import { LanguageSelector, TextL } from "../utils/Language";
+
+/** The navigation bar, above the pages
+ *
+ * Uses the routes from App.tsx
+ * If the name of a route is null, the route is not displayed in the NavBar
+ */
 export const NavBar = () => {
   const { pathname: actualPath } = useLocation();
 
