@@ -2,7 +2,7 @@ import { List } from "@chakra-ui/react";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AccordionLine } from "../../components/AccordionLine";
-import { LItem, LItemL } from "../../components/List";
+import { ListItemAny, ListItemL } from "../../components/List";
 import { Section } from "../../components/Section";
 import { LanguageContext, TextL, getText } from "../../utils/Language";
 
@@ -22,13 +22,13 @@ export const Experiences = () => {
         )}
       >
         <List>
-          <LItemL>
+          <ListItemL>
             {{
               fr: "Association d'informatique de l'Ecole polytechnique",
               en: "Computer science association of Ecole polytechnique",
             }}
-          </LItemL>
-          <LItem>
+          </ListItemL>
+          <ListItemAny>
             <TextL as="span">
               {{
                 fr: "Développement d'un outil de gestion de stock alimentaire en Typescript, React et Adonis, voir mes ",
@@ -43,7 +43,7 @@ export const Experiences = () => {
                 }}
               </TextL>
             </NavLink>
-          </LItem>
+          </ListItemAny>
         </List>
       </AccordionLine>
 
@@ -57,31 +57,31 @@ export const Experiences = () => {
         )}
       >
         <List>
-          <LItemL>
+          <ListItemL>
             {{ fr: "Formation d'officier", en: "Officer training" }}
-          </LItemL>
+          </ListItemL>
 
-          <LItemL marginLeft="3em">
+          <ListItemL marginLeft="3em">
             {{
               fr: "Apprentissage du commandement",
               en: "Command training",
             }}
-          </LItemL>
-          <LItemL marginLeft="3em">
+          </ListItemL>
+          <ListItemL marginLeft="3em">
             {{
               fr: "Gestion de projet, notamment en temps de crise",
               en: "Project management, especially in times of crisis",
             }}
-          </LItemL>
-          <LItemL marginLeft="3em">
+          </ListItemL>
+          <ListItemL marginLeft="3em">
             {{ fr: "Rigueur, exemplarité", en: "Rigor, exemplarity" }}
-          </LItemL>
-          <LItemL>
+          </ListItemL>
+          <ListItemL>
             {{
               fr: "Professeur en lycée militaire : Pédagogie, travail d'équipe",
               en: "Teacher in military high school: Pedagogy, teamwork",
             }}
-          </LItemL>
+          </ListItemL>
         </List>
       </AccordionLine>
 
@@ -95,20 +95,20 @@ export const Experiences = () => {
         )}
       >
         <List>
-          <LItemL>
+          <ListItemL>
             {{
               fr: "Gestion du travail en équipe",
               en: "Teamwork management",
             }}
-          </LItemL>
+          </ListItemL>
 
-          <LItemL>
+          <ListItemL>
             {{
               fr: "Recherche scientifique en biologie, mathématiques, et physique",
               en: "Scientific research in biology, mathematics, and physics",
             }}
-          </LItemL>
-          <LItem>
+          </ListItemL>
+          <ListItemAny>
             <TextL as="span">
               {{
                 fr: "Voir mes ",
@@ -123,7 +123,7 @@ export const Experiences = () => {
                 }}
               </TextL>
             </NavLink>
-          </LItem>
+          </ListItemAny>
         </List>
       </AccordionLine>
 
@@ -137,13 +137,15 @@ export const Experiences = () => {
         )}
       >
         <List>
-          <LItemL>{{ fr: "Journal étudiant", en: "Student newspaper" }}</LItemL>
-          <LItemL>
+          <ListItemL>
+            {{ fr: "Journal étudiant", en: "Student newspaper" }}
+          </ListItemL>
+          <ListItemL>
             {{
               fr: "Direction technique d'interviews",
               en: "Technical direction of interviews",
             }}
-          </LItemL>
+          </ListItemL>
         </List>
       </AccordionLine>
 
@@ -157,25 +159,25 @@ export const Experiences = () => {
         )}
       >
         <List>
-          <LItemL>
+          <ListItemL>
             {{
               fr: "Administration bénévole de serveur",
               en: "Voluntary server administration",
             }}
-          </LItemL>
+          </ListItemL>
 
-          <LItemL>
+          <ListItemL>
             {{
               fr: "Spécialisé dans la lutte contre la triche",
               en: "Specialized in the fight against cheating",
             }}
-          </LItemL>
-          <LItemL>
+          </ListItemL>
+          <ListItemL>
             {{
               fr: "Serveur comptant un total de plus de 10 000 utilisateurs, à la tête d’une équipe de 10 modérateurs",
               en: "Server with a total of more than 10,000 users, at the head of a team of 10 moderators",
             }}
-          </LItemL>
+          </ListItemL>
         </List>
       </AccordionLine>
     </Section>
