@@ -10,7 +10,7 @@ type LItemLProps = Omit<ListItemProps, "children"> & {
 /** An item of a list with a fancy Icon
  *  Must be inside a List component
  */
-export const LItem = ({ children, ...props }: ListItemProps) => (
+export const ListItemAny = ({ children, ...props }: ListItemProps) => (
   <ListItem {...props}>
     <ListIcon as={BiChevronRightCircle} color="veryAccent" />
     {children}
@@ -22,7 +22,7 @@ export const LItem = ({ children, ...props }: ListItemProps) => (
  *
  * With multiple languages support
  */
-export const LItemL = ({
+export const ListItemL = ({
   children,
   iconColor = "veryAccent",
   ...props

@@ -1,5 +1,5 @@
 import { Badge, Card, CardHeader, Flex, Image, List } from "@chakra-ui/react";
-import { LItemL } from "../../components/List";
+import { ListItemL } from "../../components/List";
 import { Section } from "../../components/Section";
 import { TextL } from "../../utils/Language";
 
@@ -59,60 +59,60 @@ export const Intro = () => {
           marginBottom="2em"
           color="white"
         >
-          <LItemL iconColor="white">
+          <ListItemL iconColor="white">
             {{
               fr: "Actuellement à la recherche d'un stage de 3 mois",
               en: "Currently looking for a 3-month internship",
             }}
-          </LItemL>
-          <LItemL iconColor="white">
+          </ListItemL>
+          <ListItemL iconColor="white">
             {{
               fr: "Stage de deuxième année de l'Ecole polytechnique",
               en: "Second-year internship of Ecole polytechnique",
             }}
-          </LItemL>
-          <LItemL iconColor="white">
+          </ListItemL>
+          <ListItemL iconColor="white">
             {{
               fr: "Ouvert à toute proposition dans les domaines de l'informatique :",
               en: "Open to any proposal in the fields of computer science:",
             }}
-          </LItemL>
-          <LItemL iconColor="white" marginLeft="3em">
+          </ListItemL>
+          <ListItemL iconColor="white" marginLeft="3em">
             {{
               fr: "Développement web",
               en: "Web development",
             }}
-          </LItemL>
-          <LItemL iconColor="white" marginLeft="3em">
+          </ListItemL>
+          <ListItemL iconColor="white" marginLeft="3em">
             {{
               fr: "Développement de software",
               en: "Software development",
             }}
-          </LItemL>
-          <LItemL iconColor="white" marginLeft="3em">
+          </ListItemL>
+          <ListItemL iconColor="white" marginLeft="3em">
             {{
               fr: "Intelligence artificielle",
               en: "Artificial intelligence",
             }}
-          </LItemL>
-          <LItemL iconColor="white" marginLeft="3em">
+          </ListItemL>
+          <ListItemL iconColor="white" marginLeft="3em">
             {{
               fr: "Simulation",
               en: "Simulation",
             }}
-          </LItemL>
-          <LItemL iconColor="white" marginLeft="3em">
+          </ListItemL>
+          <ListItemL iconColor="white" marginLeft="3em">
             {{
               fr: "Autre...",
               en: "Other...",
             }}
-          </LItemL>
-          <LItemL iconColor="white">
+          </ListItemL>
+          <ListItemL iconColor="white">
             {{
               fr: "N'hésitez pas à me contacter",
               en: "Feel free to contact me",
             }}
-          </LItemL>
+          </ListItemL>
         </List>
       </Card>
     </Flex>
