@@ -13,7 +13,7 @@ export const Home = () => {
       <Intro />
       <Academic />
 
-      <Accordion>
+      <Accordion allowToggle>
         <Skills />
         <Experiences />
       </Accordion>
