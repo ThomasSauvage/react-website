@@ -4,6 +4,7 @@ import { Experiences } from "./Experiences";
 import { Intro } from "./Intro";
 import { Print } from "./Print";
 import { Skills } from "./Skills";
+import { Volunteering } from "./Volunteering";
 
 /** Page: Home */
 export const Home = () => {
@@ -16,6 +17,7 @@ export const Home = () => {
       <Accordion allowToggle>
         <Skills />
         <Experiences />
+        <Volunteering />
       </Accordion>
     </Grid>
   );
