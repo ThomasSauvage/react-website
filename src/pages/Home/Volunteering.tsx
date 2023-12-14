@@ -24,8 +24,8 @@ export const Volunteering = () => {
         <List>
           <ListItemL>
             {{
-              fr: "Association d'informatique de l'Ecole polytechnique",
-              en: "Computer science association of Ecole polytechnique",
+              fr: "Association d'informatique de l'École polytechnique",
+              en: "Computer science association of École polytechnique",
             }}
           </ListItemL>
           <ListItemL>
@@ -60,6 +60,19 @@ export const Volunteering = () => {
                   en: "projects",
                 }}
               </TextL>
+            </NavLink>
+          </ListItemAny>
+          <ListItemAny>
+            <TextL as="span">
+              {{
+                fr: "Site de l'association : ",
+                en: "Website of the association: ",
+              }}
+            </TextL>
+            <NavLink to="https://br.binets.fr" target="_blank">
+              <Text as="span" color="accent">
+                br.binets.fr
+              </Text>
             </NavLink>
           </ListItemAny>
         </List>
