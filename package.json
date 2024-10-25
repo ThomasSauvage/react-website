@@ -1,7 +1,7 @@
 {
   "name": "ThomasCV",
   "homepage": "https://sauvage.pm",
-  "version": "2.2.4",
+  "version": "2.3.0",
   "private": false,
   "dependencies": {
     "@chakra-ui/react": "^2.8.0",
