@@ -3,8 +3,13 @@ import { ListItemL } from "../../components/List";
 import { Section } from "../../components/Section";
 import { TextL } from "../../utils/Language";
 
+const ANNIVERSARY = new Date("2002-09-15");
+
 /** Section: Home > Intro */
 export const Intro = () => {
+  const age = Math.floor(
+    (new Date().getTime() - ANNIVERSARY.getTime()) / 31536000000
+  );
   return (
     <Flex justifyContent="center" flexDirection={{ base: "column", xl: "row" }}>
       <Section>
@@ -28,8 +33,8 @@ export const Intro = () => {
             </TextL>
             <TextL margin="0 2em 2em 2em">
               {{
-                fr: "Je m’appelle Thomas Sauvage, j'ai 21 ans. Je suis étudiant à l’Ecole polytechnique, passionné d’informatique depuis mes 11 ans et de sciences depuis toujours. J’aime comprendre et résoudre les problèmes que je rencontre, et améliorer la qualité des outils que j’utilise au quotidien. J'ai entièrement construit ce site internet avec React, Typescript et Chakra UI.",
-                en: "I am Thomas Sauvage, a 21 years old student at Ecole polytechnique. I'm passionate about computer science since I was 11 and about science since forever. I like to understand and solve the problems I encounter, and improve the quality of the tools I use everyday. I built this website using React, Typescript and Chakra UI.",
+                fr: `Je m’appelle Thomas Sauvage, j'ai ${age} ans. Je suis étudiant à l’École polytechnique, passionné d’informatique depuis mes 11 ans et de sciences depuis toujours. Je suis l'actuel président du Binet Réseau, l'association d'informatique des élèves de l'École. J'ai créé ce site internet avec React, Typescript et Chakra UI.`,
+                en: `I am Thomas Sauvage, a ${age} years old student at École polytechnique. I'm passionate about computer science since I was 11 and about science since forever. J’aime comprendre et résoudre les problèmes que je rencontre, et améliorer la qualité des outils que j’utilise au quotidien. I built this website using React, Typescript and Chakra UI.`,
               }}
             </TextL>
           </div>
@@ -47,8 +52,8 @@ export const Intro = () => {
           >
             <TextL>
               {{
-                fr: "Recherche de stage • Juin - Fin août 2024",
-                en: "Internship • June - End of August 2024",
+                fr: "Stage de recherche • Avril - Juillet 2025",
+                en: "Research internship • April - July 2025",
               }}
             </TextL>
           </Badge>
@@ -61,32 +66,38 @@ export const Intro = () => {
         >
           <ListItemL iconColor="white">
             {{
-              fr: "Actuellement à la recherche d'un stage de 3 mois",
-              en: "Currently looking for a 3-month internship",
+              fr: "Actuellement à la recherche d'un stage de 4 mois",
+              en: "Currently looking for a 4-month internship",
             }}
           </ListItemL>
           <ListItemL iconColor="white">
             {{
-              fr: "Stage de deuxième année de l'Ecole polytechnique",
-              en: "Second-year internship of Ecole polytechnique",
+              fr: "Stage de recherche de troisième année de l'École polytechnique",
+              en: "Third-year research internship of École polytechnique",
             }}
           </ListItemL>
           <ListItemL iconColor="white">
             {{
-              fr: "Ouvert à toute proposition dans les domaines de l'informatique :",
-              en: "Open to any proposal in the fields of computer science:",
+              fr: "Ouvert à toute proposition dans les domaines de la recherche en informatique :",
+              en: "Open to any proposal in the fields of computer science research:",
             }}
           </ListItemL>
           <ListItemL iconColor="white" marginLeft="3em">
             {{
-              fr: "Développement web",
-              en: "Web development",
+              fr: "Réseau",
+              en: "Networking",
             }}
           </ListItemL>
           <ListItemL iconColor="white" marginLeft="3em">
             {{
-              fr: "Développement de software",
-              en: "Software development",
+              fr: "Hébergement web",
+              en: "Cloud computing",
+            }}
+          </ListItemL>
+          <ListItemL iconColor="white" marginLeft="3em">
+            {{
+              fr: "Cybersécurité",
+              en: "Cybersecurity",
             }}
           </ListItemL>
           <ListItemL iconColor="white" marginLeft="3em">
@@ -97,20 +108,14 @@ export const Intro = () => {
           </ListItemL>
           <ListItemL iconColor="white" marginLeft="3em">
             {{
-              fr: "Simulation",
-              en: "Simulation",
-            }}
-          </ListItemL>
-          <ListItemL iconColor="white" marginLeft="3em">
-            {{
               fr: "Autre...",
               en: "Other...",
             }}
           </ListItemL>
           <ListItemL iconColor="white">
             {{
-              fr: "N'hésitez pas à me contacter",
-              en: "Feel free to contact me",
+              fr: "N'hésitez pas à me contacter (voir la page Contact)",
+              en: "Feel free to contact me (see the Contact page)",
             }}
           </ListItemL>
         </List>
