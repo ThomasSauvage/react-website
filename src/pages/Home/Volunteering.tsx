@@ -30,8 +30,8 @@ export const Volunteering = () => {
           </ListItemL>
           <ListItemL>
             {{
-              fr: "Dirigeant une équipe de 17 personnes",
-              en: "Leading a team of 17 people",
+              fr: "Dirigeant une équipe de 30 personnes",
+              en: "Leading a team of 30 people",
             }}
           </ListItemL>
           <ListItemL>

@@ -42,6 +42,18 @@ export const Skills = () => {
               en: "in Java since 2023",
             }}
           </ListItemL>
+          <ListItemL marginLeft="3em">
+            {{
+              fr: "en C/C++ depuis 2024",
+              en: "in C/C++ since 2024",
+            }}
+          </ListItemL>
+          <ListItemL marginLeft="3em">
+            {{
+              fr: "en Go depuis 2024",
+              en: "in Go since 2024",
+            }}
+          </ListItemL>
           <ListItemL>
             {{
               fr: "Développement de sites internet",
@@ -50,8 +62,8 @@ export const Skills = () => {
           </ListItemL>
           <ListItemL marginLeft="3em">
             {{
-              fr: "en HTML&CSS avec gestion du backend en Django (Python)",
-              en: "in HTML&CSS with a Django (Python) backend",
+              fr: "en HTML&CSS",
+              en: "in HTML&CSS",
             }}
           </ListItemL>
           <ListItemAny marginLeft="3em">
@@ -70,15 +82,21 @@ export const Skills = () => {
             </Link>
             <TextL as="span">
               {{
-                fr: " (association d'informatique de l'Ecole Polytechnique)",
-                en: " (computer science association of Ecole Polytechnique)",
+                fr: " (association d'informatique de l'École polytechnique)",
+                en: " (computer science association of École polytechnique)",
               }}
             </TextL>
           </ListItemAny>
+          <ListItemL marginLeft="3em">
+            {{
+              fr: "en Vue, Node.js, Adonis...",
+              en: "in Vue, Node.js, Adonis...",
+            }}
+          </ListItemL>
           <ListItemL>
             {{
-              fr: "Cybersécurité : Cryptographie asymétrique & symétrique, hachage, utilisation d’un gestionnaire de mot de passe et d’une clef physique (YubiKey)",
-              en: "Cybersecurity: Asymmetric & symmetric cryptography, hashing, use of a password manager and a physical key (YubiKey)",
+              fr: "Intelligence artificielle",
+              en: "Artificial intelligence",
             }}
           </ListItemL>
           <ListItemAny>
@@ -100,18 +118,44 @@ export const Skills = () => {
         </List>
       </AccordionLine>
 
-      <AccordionLine title={getText({ fr: "Technique", en: "Tech" }, language)}>
+      <AccordionLine
+        title={getText(
+          {
+            fr: "Administrateur système & Cybersécurité",
+            en: "System administrator & Cybersecurity",
+          },
+          language
+        )}
+      >
         <List>
           <ListItemL>
             {{
-              fr: "Électronique & informatique : Création et réparation d’ordinateurs, de clavier ergonomiques…",
-              en: "Electronics & computer science: Creation and repair of computers, ergonomic keyboards…",
+              fr: "Cryptographie usuelle et post-quantique, hachage, utilisation d’un gestionnaire de mot de passe et d’une clé physique de sécurité (FIDO2)",
+              en: "Usual and post-quantum cryptography, hashing, use of a password manager and a physical security key (FIDO2)",
             }}
           </ListItemL>
           <ListItemL>
             {{
-              fr: "Impression 3D",
-              en: "3D printing",
+              fr: "Sécurisation de serveurs linux (SSH, pare-feu, DMZ, ...)",
+              en: "Securing linux servers (SSH, firewall, DMZ, ...)",
+            }}
+          </ListItemL>
+          <ListItemL>
+            {{
+              fr: "Virtualisation (Proxmox, Docker, ...)",
+              en: "Virtualization (Proxmox, Docker, ...)",
+            }}
+          </ListItemL>
+          <ListItemL>
+            {{
+              fr: "Réseau",
+              en: "Networking",
+            }}
+          </ListItemL>
+          <ListItemL>
+            {{
+              fr: "Hébergement web",
+              en: "Cloud computing",
             }}
           </ListItemL>
         </List>
@@ -149,6 +193,86 @@ export const Skills = () => {
             {{
               fr: "Guitare",
               en: "Guitar",
+            }}
+          </ListItemL>
+        </List>
+      </AccordionLine>
+
+      <AccordionLine
+        title={getText({ fr: "Soft skills", en: "Soft skills" }, language)}
+      >
+        <List>
+          <ListItemL>
+            {{
+              fr: "Compétences relationnelles",
+              en: "Interpersonal skills",
+            }}
+          </ListItemL>
+          <ListItemL marginLeft="3em">
+            {{
+              fr: "Leadership",
+              en: "Leadership",
+            }}
+          </ListItemL>
+          <ListItemL marginLeft="3em">
+            {{
+              fr: "Travail en équipe",
+              en: "Teamwork",
+            }}
+          </ListItemL>
+          <ListItemL marginLeft="3em">
+            {{
+              fr: "Présenter devant un public",
+              en: "Public speaking",
+            }}
+          </ListItemL>
+          <ListItemL marginLeft="3em">
+            {{
+              fr: "Résolution de conflits",
+              en: "Conflict resolution",
+            }}
+          </ListItemL>
+
+          <ListItemL>
+            {{
+              fr: "Compétences organisationnelles",
+              en: "Organizational skills",
+            }}
+          </ListItemL>
+          <ListItemL marginLeft="3em">
+            {{
+              fr: "Prise de décision",
+              en: "Decision making",
+            }}
+          </ListItemL>
+          <ListItemL marginLeft="3em">
+            {{
+              fr: "Gestion de projet",
+              en: "Project management",
+            }}
+          </ListItemL>
+          <ListItemL marginLeft="3em">
+            {{
+              fr: "Résolution de problèmes",
+              en: "Problem solving",
+            }}
+          </ListItemL>
+          <ListItemL marginLeft="3em">
+            {{
+              fr: "Gestion du temps",
+              en: "Time management",
+            }}
+          </ListItemL>
+          <ListItemL marginLeft="3em">
+            {{
+              fr: "Créativité",
+              en: "Creativity",
+            }}
+          </ListItemL>
+          <ListItemL marginLeft="3em">
+            {{
+              fr: "Initiative",
+              en: "Initiative",
             }}
           </ListItemL>
         </List>

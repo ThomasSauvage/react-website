@@ -34,8 +34,8 @@ export const Projects = () => {
           <List>
             <ListItemL>
               {{
-                fr: "Site internet de gestion de stock alimentaire interne à l'Ecole polytechnique",
-                en: "Food stock management website for Ecole polytechnique",
+                fr: "Site internet de gestion de stock alimentaire interne à l'École polytechnique",
+                en: "Food stock management website for École polytechnique",
               }}
             </ListItemL>
             <ListItemL>

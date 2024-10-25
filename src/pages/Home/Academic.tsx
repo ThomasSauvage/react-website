@@ -31,15 +31,15 @@ export const Academic = () => {
           </Thead>
           <Tbody width="auto">
             <Tr>
-              <Td whiteSpace="normal">2022 - ...</Td>
+              <Td whiteSpace="normal">2022 - 2025</Td>
               <Td color="veryAccent" fontWeight="bold" whiteSpace="normal">
-                Ecole polytechnique
+                École polytechnique
               </Td>
               <Td whiteSpace="normal">
                 <TextL>
                   {{
-                    fr: "2ème année • Cycle ingénieur polytechnicien",
-                    en: "Second year (Master 1) • France top-ranking engineering university",
+                    fr: "3ème année • Cycle ingénieur polytechnicien",
+                    en: "Third-year (Master 2) • France top-ranking engineering university",
                   }}
                 </TextL>
               </Td>
