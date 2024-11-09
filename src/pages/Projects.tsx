@@ -11,17 +11,77 @@ export const Projects = () => {
       <Section title={{ fr: "Git, GitHub, GitLab", en: "Git, GitHub, GitLab" }}>
         <TextL>
           {{
-            fr: "J'ai pu utiliser Git, GitHub et GitLab dans le cadre de mes projets. La majorité d'entre eux sont privés, mais vous pouvez voir mon activité sur mon compte :",
-            en: "I had the chance to use Git, GitHub and GitLab for many of my projects. Most of them are private, but you can see my activity on my account:",
+            fr: "J'ai pu utiliser Git, GitHub et GitLab dans le cadre de mes projets. La majorité d'entre eux sont privés, mais vous pouvez voir mon activité sur mes comptes :",
+            en: "I used Git, GitHub and GitLab for many of my projects. Most of them are private, but you can see my activity on my accounts:",
           }}
         </TextL>
-        <Center marginTop="2em">
+        <Center marginTop="2em" gap="1em">
           <Link to="https://github.com/ThomasSauvage" target="_blank">
             <Button bg="accent" color="white">
               GitHub
             </Button>
           </Link>
+          <Link to="https://gitlab.binets.fr/svg" target="_blank">
+            <Button bg="accent" color="white">
+              GitLab
+            </Button>
+          </Link>
         </Center>
+      </Section>
+      <Section
+        title={{
+          fr: "Échange de clé authentifié par mot de passe post-quantique • 2023 - 2024",
+          en: "Post-quantum password authenticated key exchange • 2023 - 2024",
+        }}
+      >
+        <Flex
+          gap="1em"
+          alignItems="center"
+          justifyContent="space-around"
+          flexWrap="wrap"
+        >
+          <Image src="/projects/cake.svg" maxHeight="10em" />
+          <Image src="/projects/anssi.png" maxHeight="10em" />
+
+          <VStack gap="1em">
+            <List>
+              <ListItemL>
+                {{
+                  fr: `Projet de recherche en cryptographie pour le "Projet Scientifique Collectif" de l'École polytechnique`,
+                  en: `Research project in cryptography for the "Collective Scientific Project" of École polytechnique`,
+                }}
+              </ListItemL>
+              <ListItemL>
+                {{
+                  fr: "Première implémentation d'un échange de clé authentifié par mot de passe post-quantique",
+                  en: "Writing the first implementation of a post-quantum password authenticated key exchange",
+                }}
+              </ListItemL>
+              <ListItemL>
+                {{
+                  fr: "Implémentation du protocole CAKE, en partenariat avec l'ANSSI (Agence nationale de la sécurité des systèmes d'information)",
+                  en: "Implementing the CAKE protocol, in partnership with ANSSI (French national agency for cybersecurity)",
+                }}
+              </ListItemL>
+              <ListItemL>
+                {{
+                  fr: "Nominé pour le meilleur projet scientifique collectif de l'École polytechnique de l'année",
+                  en: "Nominated for the best École polytechnique collective scientific project of the year",
+                }}
+              </ListItemL>
+            </List>
+            <Link to="https://github.com/pq-pake" target="_blank">
+              <Button bg="accent" color="white">
+                <TextL>
+                  {{
+                    fr: "Implémentations en C & Python sur GitHub",
+                    en: "C & Python implementations on GitHub",
+                  }}
+                </TextL>
+              </Button>
+            </Link>
+          </VStack>
+        </Flex>
       </Section>
       <Section title={{ fr: "Chocapix • 2023", en: "Chocapix • 2023" }}>
         <Flex
