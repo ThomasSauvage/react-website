@@ -44,7 +44,7 @@ export const Contact = () => {
   const showToast = useToast();
   const { language } = useContext(LanguageContext);
 
-  const { onCopy } = useClipboard(email.join(""));
+  const { onCopy, hasCopied } = useClipboard(email.join(""));
 
   // The message is sent to a service called ntfy.sh, to receive the message on my phone
   const { mutate } = useMutation(
@@ -91,6 +91,22 @@ export const Contact = () => {
 
   const isValid = Object.keys(errors).length === 0;
 
+  const copyEmail = () => {
+    onCopy();
+    showToast({
+      title: getText(
+        {
+          fr: "Adresse mail copiée dans le presse-papier",
+          en: "Email copied to clipboard",
+        },
+        language
+      ),
+      status: "info",
+      duration: 5000,
+      isClosable: true,
+    });
+  };
+
   return (
     <Grid gap="3em">
       <Section title={{ fr: "Mes coordonnées", en: "My contact" }}>
@@ -103,20 +119,13 @@ export const Contact = () => {
           </TextL>
           <Button
             variant="link"
+            onTouchStart={() => {
+              if (hasCopied) return;
+              copyEmail();
+            }}
             onClick={() => {
-              onCopy();
-              showToast({
-                title: getText(
-                  {
-                    fr: "Adresse mail copiée dans le presse-papier",
-                    en: "Email copied to clipboard",
-                  },
-                  language
-                ),
-                status: "info",
-                duration: 5000,
-                isClosable: true,
-              });
+              if (hasCopied) return;
+              copyEmail();
             }}
           >
             <Image
