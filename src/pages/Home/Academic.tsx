@@ -7,6 +7,7 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { Section } from "../../components/Section";
 import { TextL } from "../../utils/Language";
 
@@ -33,7 +34,12 @@ export const Academic = () => {
             <Tr>
               <Td whiteSpace="normal">2022 - 2025</Td>
               <Td color="veryAccent" fontWeight="bold" whiteSpace="normal">
-                École polytechnique
+                <Link
+                  to="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049496824"
+                  target="_blank"
+                >
+                  École polytechnique
+                </Link>
               </Td>
               <Td whiteSpace="normal">
                 <TextL>
