@@ -6,6 +6,7 @@ import {
   Grid,
   Image,
   Link,
+  useClipboard,
   useToast,
 } from "@chakra-ui/react";
 import { useMutation } from "@tanstack/react-query";
@@ -15,6 +16,21 @@ import { LanguageContext, TextL, getText } from "../utils/Language";
 import StringInputRhf from "../utils/StringInputRhf";
 import TextareaRhf from "../utils/TextareaRhf";
 import { ContactForm, useContactForm } from "../utils/contactForm";
+
+// The email and phone are stored in an array to avoid bots to find them
+// Moreover, they are showed on the page as a picture
+// The email and phone are concatenated when the user clicks on the picture, for the link to work
+const email = [
+  "thomas",
+  ".",
+  "sauvage",
+  ".",
+  "2022",
+  "@",
+  "polytechnique",
+  ".",
+  "org",
+];
 
 /** Page: Contact */
 export const Contact = () => {
@@ -27,6 +43,8 @@ export const Contact = () => {
   } = useContactForm();
   const showToast = useToast();
   const { language } = useContext(LanguageContext);
+
+  const { onCopy } = useClipboard(email.join(""));
 
   // The message is sent to a service called ntfy.sh, to receive the message on my phone
   const { mutate } = useMutation(
@@ -71,22 +89,6 @@ export const Contact = () => {
     }
   );
 
-  // The email and phone are stored in an array to avoid bots to find them
-  // Moreover, they are showed on the page as a picture
-  // The email and phone are concatenated when the user clicks on the picture, for the link to work
-  const email = [
-    "mai",
-    "lto:",
-    "thomas",
-    ".",
-    "sauva",
-    "@",
-    "gmail",
-    ".",
-    "com",
-  ];
-  const phone = ["t", "el:", "+336", "61", "63", "52", "92"];
-
   const isValid = Object.keys(errors).length === 0;
 
   return (
@@ -102,34 +104,24 @@ export const Contact = () => {
           <Button
             variant="link"
             onClick={() => {
-              window.location.href = email.join("");
+              onCopy();
+              showToast({
+                title: getText(
+                  {
+                    fr: "Adresse mail copiée dans le presse-papier",
+                    en: "Email copied to clipboard",
+                  },
+                  language
+                ),
+                status: "info",
+                duration: 5000,
+                isClosable: true,
+              });
             }}
           >
             <Image
               src="/contact/mail.png"
               height="1.3em"
-              marginLeft="1em"
-              marginBottom="-0.3em"
-            />
-          </Button>
-        </Flex>
-
-        <Flex alignItems="center" flexWrap="wrap">
-          <TextL as="span">
-            {{
-              fr: " Ou par téléphone (WhatsApp, Signal...): ",
-              en: " Or by phone (WhatsApp, Signal...): ",
-            }}
-          </TextL>
-          <Button
-            variant="link"
-            onClick={() => {
-              window.location.href = phone.join("");
-            }}
-          >
-            <Image
-              src="/contact/phone.png"
-              height="0.9em"
               marginLeft="1em"
               marginBottom="-0.3em"
             />
