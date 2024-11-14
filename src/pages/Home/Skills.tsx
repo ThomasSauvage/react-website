@@ -290,8 +290,8 @@ export const Skills = () => {
           </ListItemL>
           <ListItemL>
             {{
-              fr: "Maîtrise (C1/C2): Anglais",
-              en: "Proficient (C1/C2): English",
+              fr: "Maîtrise (C1/C2): Anglais • Test d'anglais de Cambridge (Linguaskill) - Score: 180+/180",
+              en: "Proficient (C1/C2): English • Cambridge English Test (Linguaskill) - Score: 180+/180",
             }}
           </ListItemL>
           <ListItemL>
@@ -310,6 +310,12 @@ export const Skills = () => {
         )}
       >
         <List>
+          <ListItemL>
+            {{
+              fr: "Test d'anglais de Cambridge (Linguaskill) - Score: 180+/180",
+              en: "Cambridge English Test (Linguaskill) - Score: 180+/180",
+            }}
+          </ListItemL>
           <ListItemL>
             {{
               fr: "Permis de pilote de drones",
