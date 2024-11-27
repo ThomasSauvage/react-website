@@ -75,6 +75,12 @@ export const Volunteering = () => {
               </Text>
             </NavLink>
           </ListItemAny>
+          <ListItemL>
+            {{
+              fr: "Récompensé : Outstanding leadership & Outstanding investment",
+              en: "Awarded: Outstanding leadership & Outstanding investment",
+            }}
+          </ListItemL>
         </List>
       </AccordionLine>
 
