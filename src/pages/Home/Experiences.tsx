@@ -14,8 +14,8 @@ export const Experiences = () => {
       <AccordionLine
         title={getText(
           {
-            fr: "Free - Groupe Iliad • Développeur Full Stack • Juin - Septembre 2024 ",
-            en: "Free - Iliad Group • Full Stack Developer • Jun - September 2024",
+            fr: "Free - Groupe Iliad • Ingénieur logiciel • Juin - Septembre 2024 ",
+            en: "Free - Iliad Group • Software engineer • Jun - September 2024",
           },
           language
         )}
