@@ -1,4 +1,4 @@
-import { Button, HStack, Image, Text, TextProps } from "@chakra-ui/react";
+import { Button, HStack, Image, Text, type TextProps } from "@chakra-ui/react";
 import React, { useContext } from "react";
 import { usePersistentState } from "./usePersistantState";
 

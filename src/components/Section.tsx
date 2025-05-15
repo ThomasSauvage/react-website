@@ -2,11 +2,11 @@ import {
   Card,
   CardBody,
   CardHeader,
-  CardProps,
+  type CardProps,
   Heading,
 } from "@chakra-ui/react";
-import { ReactNode, useContext } from "react";
-import { LanguageContext, TextLanguage, getText } from "../utils/Language";
+import { type ReactNode, useContext } from "react";
+import { LanguageContext, type TextLanguage, getText } from "../utils/Language";
 
 type SectionProps = Omit<CardProps, "title"> & {
   title?: TextLanguage;

@@ -15,7 +15,7 @@ import { Section } from "../components/Section";
 import { LanguageContext, TextL, getText } from "../utils/Language";
 import StringInputRhf from "../utils/StringInputRhf";
 import TextareaRhf from "../utils/TextareaRhf";
-import { ContactForm, useContactForm } from "../utils/contactForm";
+import { type ContactForm, useContactForm } from "../utils/contactForm";
 
 // The email and phone are stored in an array to avoid bots to find them
 // Moreover, they are showed on the page as a picture

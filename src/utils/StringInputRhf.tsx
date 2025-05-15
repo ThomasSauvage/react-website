@@ -1,13 +1,13 @@
-import { Input, InputProps } from "@chakra-ui/react";
+import { Input, type InputProps } from "@chakra-ui/react";
 import {
-  Control,
-  FieldValues,
-  Path,
-  PathValue,
-  UseFormTrigger,
+  type Control,
+  type FieldValues,
+  type Path,
+  type PathValue,
+  type UseFormTrigger,
   useController,
 } from "react-hook-form";
-import { RHFName } from "./default.types";
+import { type RHFName } from "./default.types";
 
 export interface StringInputRhfProps<
   T extends FieldValues,

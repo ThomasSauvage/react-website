@@ -1,6 +1,6 @@
-import { ListIcon, ListItem, ListItemProps } from "@chakra-ui/react";
+import { ListIcon, ListItem, type ListItemProps } from "@chakra-ui/react";
 import { BiChevronRightCircle } from "react-icons/bi";
-import { TextL, TextLanguage } from "../utils/Language";
+import { TextL, type TextLanguage } from "../utils/Language";
 
 type LItemLProps = Omit<ListItemProps, "children"> & {
   children: TextLanguage;
