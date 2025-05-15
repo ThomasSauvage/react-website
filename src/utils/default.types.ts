@@ -1,4 +1,4 @@
-import { FieldValues, Path, PathValue } from "react-hook-form";
+import { type FieldValues, type Path, type PathValue } from "react-hook-form";
 
 /** Strict type for the name of a RHF attribute. Only accepts attributes that extend the third "Type" param */
 export type RHFName<

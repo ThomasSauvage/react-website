@@ -1,7 +1,7 @@
 import { Grid } from "@chakra-ui/react";
 import React from "react";
 
-import { IconType } from "react-icons";
+import { type IconType } from "react-icons";
 import {
   AiOutlineHome,
   AiOutlinePhone,
@@ -16,7 +16,8 @@ import { NavBar } from "./pages/NavBar";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { Pictures } from "./pages/Pictures";
 import { Projects } from "./pages/Projects";
-import { TextLanguage } from "./utils/Language";
+import { type TextLanguage } from "./utils/Language";
+
 /** A route of the app */
 interface RoutePath {
   path: string;

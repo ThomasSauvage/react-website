@@ -5,7 +5,7 @@ import {
   AccordionPanel,
 } from "@chakra-ui/accordion";
 import { Box, Heading } from "@chakra-ui/layout";
-import { ReactNode } from "react";
+import { type ReactNode } from "react";
 
 /** A line of the accordion */
 export const AccordionLine = ({
