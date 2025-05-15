@@ -1,7 +1,7 @@
 import { Flex, Heading, Text } from "@chakra-ui/react";
 
 /** Page: Not found */
-export const NotFoundPage = () => {
+const NotFoundPage = () => {
   return (
     <Flex flexDirection="column" alignItems="center" margin="3em">
       <Heading margin="2em"> Introuvable ! </Heading>
@@ -9,3 +9,5 @@ export const NotFoundPage = () => {
     </Flex>
   );
 };
+
+export default NotFoundPage;

@@ -56,7 +56,7 @@ const OnePicture = ({ name }: { name: string }) => {
 };
 
 /** Page: Pictures */
-export const Pictures = () => {
+const Pictures = () => {
   return (
     <Flex flexWrap="wrap" gap="1em" justifyContent="space-around">
       {pictures.map((name) => (
@@ -65,3 +65,5 @@ export const Pictures = () => {
     </Flex>
   );
 };
+
+export default Pictures;
