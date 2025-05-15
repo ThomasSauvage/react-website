@@ -1,5 +1,4 @@
-import { Badge, Card, CardHeader, Flex, Image, List } from "@chakra-ui/react";
-import { ListItemL } from "../../components/List";
+import { Flex, Image } from "@chakra-ui/react";
 import { Section } from "../../components/Section";
 import { TextL } from "../../utils/Language";
 
