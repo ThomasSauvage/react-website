@@ -33,7 +33,7 @@ const email = [
 ];
 
 /** Page: Contact */
-export const Contact = () => {
+const Contact = () => {
   const {
     getValues,
     control,
@@ -231,3 +231,5 @@ export const Contact = () => {
     </Grid>
   );
 };
+
+export default Contact;

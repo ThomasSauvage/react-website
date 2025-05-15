@@ -5,7 +5,7 @@ import { Section } from "../components/Section";
 import { TextL } from "../utils/Language";
 
 /** Page: Projects */
-export const Projects = () => {
+const Projects = () => {
   return (
     <VStack>
       <Section title={{ fr: "Git, GitHub, GitLab", en: "Git, GitHub, GitLab" }}>
@@ -256,3 +256,5 @@ export const Projects = () => {
     </VStack>
   );
 };
+
+export default Projects;

@@ -7,7 +7,7 @@ import { Skills } from "./Skills";
 import { Volunteering } from "./Volunteering";
 
 /** Page: Home */
-export const Home = () => {
+const Home = () => {
   return (
     <Grid alignContent="center" gap="3em">
       <Print />
@@ -22,3 +22,5 @@ export const Home = () => {
     </Grid>
   );
 };
+
+export default Home;
