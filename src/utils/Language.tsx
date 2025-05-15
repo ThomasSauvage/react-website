@@ -6,7 +6,7 @@ type Language = "fr" | "en";
 
 export const LanguageContext = React.createContext({
   language: "en" as Language,
-  setLanguage: (language: Language) => {},
+  setLanguage: (_language: Language) => {},
 });
 
 /** Context provider for:
