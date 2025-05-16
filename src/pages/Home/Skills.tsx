@@ -177,7 +177,6 @@ export const Skills = () => {
                 en: "Cloud computing",
               }}
             </ListItemL>
-            MdComputer
           </List>
         </AccordionLineTextTitle>
 

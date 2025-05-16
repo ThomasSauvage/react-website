@@ -19,21 +19,10 @@ const Home = () => {
           <Print />
         </GridItem>
 
-        <GridItem>
-          <Intro />
-        </GridItem>
-
-        <GridItem>
-          <Academic />
-        </GridItem>
-
-        <GridItem>
-          <Experiences />
-        </GridItem>
-
-        <GridItem>
-          <Volunteering />
-        </GridItem>
+        <Intro />
+        <Academic />
+        <Experiences />
+        <Volunteering />
 
         <GridItem colSpan={{ base: 1, xl: 2 }}>
           <Skills />
