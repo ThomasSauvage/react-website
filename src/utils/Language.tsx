@@ -6,6 +6,7 @@ type Language = "fr" | "en";
 
 export const LanguageContext = React.createContext({
   language: "en" as Language,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setLanguage: (_language: Language) => {},
 });
 

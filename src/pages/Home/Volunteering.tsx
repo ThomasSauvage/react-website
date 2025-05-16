@@ -1,16 +1,12 @@
 import { List, Text } from "@chakra-ui/react";
-import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { AccordionLineTextTitle } from "../../components/AccordionLineTextTitle";
 import { ListItemAny, ListItemL } from "../../components/List";
 import { Section } from "../../components/Section";
-import { LanguageContext, TextL, getText } from "../../utils/Language";
+import { TextL } from "../../utils/Language";
 import { ExperienceLine } from "../../components/ExperienceLine";
 
 /** Section: Home > Volunteering */
 export const Volunteering = () => {
-  const { language } = useContext(LanguageContext);
-
   return (
     <Section title={{ fr: "Bénévolat", en: "Volunteering" }}>
       <ExperienceLine
