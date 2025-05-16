@@ -4,7 +4,6 @@ import { AccordionLineTextTitle } from "../../components/AccordionLineTextTitle"
 import { ListItemAny, ListItemL } from "../../components/List";
 import { Section } from "../../components/Section";
 import { LanguageContext, TextL, getText } from "../../utils/Language";
-import { CiServer } from "react-icons/ci";
 import { MdComputer } from "react-icons/md";
 import { FaFileContract, FaPaintBrush } from "react-icons/fa";
 import { FaPeoplePulling, FaServer } from "react-icons/fa6";

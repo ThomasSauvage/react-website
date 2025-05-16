@@ -1,5 +1,10 @@
 import { Center, Grid, Spinner } from "@chakra-ui/react";
-import React, { lazy, Suspense, type LazyExoticComponent } from "react";
+import {
+  lazy,
+  Suspense,
+  type ComponentType,
+  type LazyExoticComponent,
+} from "react";
 
 import { type IconType } from "react-icons";
 import {
@@ -19,9 +24,7 @@ interface RoutePath {
   path: string;
   name: TextLanguage | null;
   logo?: IconType;
-  Element:
-    | React.ComponentType<any>
-    | LazyExoticComponent<React.ComponentType<any>>;
+  Element: ComponentType | LazyExoticComponent<ComponentType>;
 }
 
 /** List of all routes for this app,
