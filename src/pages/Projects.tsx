@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { ListItemL } from "../components/List";
 import { Section } from "../components/Section";
 import { TextL } from "../utils/Language";
+import { FaGithub } from "react-icons/fa";
+import { FaGitlab } from "react-icons/fa6";
 
 /** Page: Projects */
 const Projects = () => {
@@ -11,18 +13,18 @@ const Projects = () => {
       <Section title={{ fr: "Git, GitHub, GitLab", en: "Git, GitHub, GitLab" }}>
         <TextL>
           {{
-            fr: "J'ai pu utiliser Git, GitHub et GitLab dans le cadre de mes projets. La majorité d'entre eux sont privés, mais vous pouvez voir mon activité sur mes comptes :",
-            en: "I used Git, GitHub and GitLab for many of my projects. Most of them are private, but you can see my activity on my accounts:",
+            fr: "J'ai pu utiliser Git, GitHub et GitLab dans le cadre de mes projets. N'hésitez pas à y jeter un œil !",
+            en: "I used Git, GitHub and GitLab for many of my projects. Feel free to check them out!",
           }}
         </TextL>
         <Center marginTop="2em" gap="1em">
           <Link to="https://github.com/ThomasSauvage" target="_blank">
-            <Button bg="accent" color="white">
+            <Button bg="accent" color="white" leftIcon={<FaGithub />}>
               GitHub
             </Button>
           </Link>
           <Link to="https://gitlab.binets.fr/svg" target="_blank">
-            <Button bg="accent" color="white">
+            <Button bg="accent" color="white" leftIcon={<FaGitlab />}>
               GitLab
             </Button>
           </Link>

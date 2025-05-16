@@ -1,9 +1,14 @@
 import { Grid, Link, List } from "@chakra-ui/react";
 import { useContext } from "react";
-import { AccordionLine } from "../../components/AccordionLine";
+import { AccordionLineTextTitle } from "../../components/AccordionLineTextTitle";
 import { ListItemAny, ListItemL } from "../../components/List";
 import { Section } from "../../components/Section";
 import { LanguageContext, TextL, getText } from "../../utils/Language";
+import { CiServer } from "react-icons/ci";
+import { MdComputer } from "react-icons/md";
+import { FaFileContract, FaPaintBrush } from "react-icons/fa";
+import { FaPeoplePulling, FaServer } from "react-icons/fa6";
+import { IoMdChatbubbles } from "react-icons/io";
 
 /** Section: Home > Skills */
 export const Skills = () => {
@@ -15,11 +20,12 @@ export const Skills = () => {
         templateColumns={{ base: "1fr", xl: "repeat(2, 1fr)" }}
         alignItems="start"
       >
-        <AccordionLine
+        <AccordionLineTextTitle
           title={getText(
             { fr: "Programmation", en: "Computer programming" },
             language
           )}
+          icon={MdComputer}
         >
           <List>
             <ListItemL>
@@ -129,9 +135,9 @@ export const Skills = () => {
               </Link>
             </ListItemAny>
           </List>
-        </AccordionLine>
+        </AccordionLineTextTitle>
 
-        <AccordionLine
+        <AccordionLineTextTitle
           title={getText(
             {
               fr: "Administrateur système & Cybersécurité",
@@ -139,6 +145,7 @@ export const Skills = () => {
             },
             language
           )}
+          icon={FaServer}
         >
           <List>
             <ListItemL>
@@ -171,11 +178,13 @@ export const Skills = () => {
                 en: "Cloud computing",
               }}
             </ListItemL>
+            MdComputer
           </List>
-        </AccordionLine>
+        </AccordionLineTextTitle>
 
-        <AccordionLine
+        <AccordionLineTextTitle
           title={getText({ fr: "Artistique", en: "Artistic" }, language)}
+          icon={FaPaintBrush}
         >
           <List>
             <ListItemL>
@@ -209,10 +218,11 @@ export const Skills = () => {
               }}
             </ListItemL>
           </List>
-        </AccordionLine>
+        </AccordionLineTextTitle>
 
-        <AccordionLine
+        <AccordionLineTextTitle
           title={getText({ fr: "Soft skills", en: "Soft skills" }, language)}
+          icon={FaPeoplePulling}
         >
           <List>
             <ListItemL>
@@ -289,10 +299,11 @@ export const Skills = () => {
               }}
             </ListItemL>
           </List>
-        </AccordionLine>
+        </AccordionLineTextTitle>
 
-        <AccordionLine
+        <AccordionLineTextTitle
           title={getText({ fr: "Langues", en: "Languages" }, language)}
+          icon={IoMdChatbubbles}
         >
           <List>
             <ListItemL>
@@ -314,13 +325,14 @@ export const Skills = () => {
               }}
             </ListItemL>
           </List>
-        </AccordionLine>
+        </AccordionLineTextTitle>
 
-        <AccordionLine
+        <AccordionLineTextTitle
           title={getText(
             { fr: "Certifications", en: "Certifications" },
             language
           )}
+          icon={FaFileContract}
         >
           <List>
             <ListItemL>
@@ -342,7 +354,7 @@ export const Skills = () => {
               }}
             </ListItemL>
           </List>
-        </AccordionLine>
+        </AccordionLineTextTitle>
       </Grid>
     </Section>
   );
