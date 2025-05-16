@@ -1,24 +1,63 @@
 import { List } from "@chakra-ui/react";
-import { useContext } from "react";
-import { AccordionLine } from "../../components/AccordionLine";
 import { ListItemL } from "../../components/List";
 import { Section } from "../../components/Section";
-import { LanguageContext, getText } from "../../utils/Language";
+import { ExperienceLine } from "../../components/ExperienceLine";
 
 /** Section: Home > Experiences */
 export const Experiences = () => {
-  const { language } = useContext(LanguageContext);
-
   return (
     <Section title={{ fr: "Expérience", en: "Experience" }}>
-      <AccordionLine
-        title={getText(
-          {
-            fr: "Free - Groupe Iliad • Ingénieur logiciel • Juin - Septembre 2024 ",
-            en: "Free - Iliad Group • Software engineer • Jun - September 2024",
-          },
-          language
-        )}
+      <ExperienceLine
+        company={{
+          fr: "Cisco",
+          en: "Cisco",
+        }}
+        jobTitle={{
+          fr: "Ingénieur stagiaire de recherche en réseaux",
+          en: "Networking research engineer intern",
+        }}
+        dates={{
+          fr: "Avril - Août 2025",
+          en: "April - August 2025",
+        }}
+        logo="cisco.svg"
+      >
+        <List>
+          <ListItemL>
+            {{
+              fr: "Leader mondial des technologies de l'information et de la communication",
+              en: "World leader in information and communication technologies",
+            }}
+          </ListItemL>
+          <ListItemL>
+            {{
+              fr: "Évaluation des limitations de scalabilité d'un VPN Cloud-Native",
+              en: "Assessing the scalability limitations of a Cloud-Native VPN",
+            }}
+          </ListItemL>
+          <ListItemL>
+            {{
+              fr: "À Lausanne, Suisse",
+              en: "In Lausanne, Switzerland",
+            }}
+          </ListItemL>
+        </List>
+      </ExperienceLine>
+
+      <ExperienceLine
+        company={{
+          fr: "Free - Groupe Iliad",
+          en: "Free - Iliad Group",
+        }}
+        jobTitle={{
+          fr: "Ingénieur logiciel stagiaire",
+          en: "Software engineer intern",
+        }}
+        dates={{
+          fr: "Juin - Septembre 2024",
+          en: "Jun - September 2024",
+        }}
+        logo="free.svg"
       >
         <List>
           <ListItemL>
@@ -47,15 +86,22 @@ export const Experiences = () => {
             }}
           </ListItemL>
         </List>
-      </AccordionLine>
-      <AccordionLine
-        title={getText(
-          {
-            fr: "Armée de Terre • Officier, Professeur & Colleur de Mathématiques, Physique et Informatique en Maths sup/Maths spé • Septembre 2022 - Avril 2023 ",
-            en: "French Army • Officer, Teacher & Tutor of Mathematics, Physics and Computer Science in preparatory classes • September 2022 - April 2023",
-          },
-          language
-        )}
+      </ExperienceLine>
+
+      <ExperienceLine
+        company={{
+          fr: "Armée de Terre",
+          en: "French Army",
+        }}
+        jobTitle={{
+          fr: "Officier, Professeur & Colleur de Mathématiques, Physique et Informatique en Maths sup/Maths spé",
+          en: "Officer, Teacher & Tutor of Mathematics, Physics and Computer Science in preparatory classes",
+        }}
+        dates={{
+          fr: "Septembre 2022 - Avril 2023",
+          en: "September 2022 - April 2023",
+        }}
+        logo="AdT.svg"
       >
         <List>
           <ListItemL>
@@ -84,7 +130,7 @@ export const Experiences = () => {
             }}
           </ListItemL>
         </List>
-      </AccordionLine>
+      </ExperienceLine>
     </Section>
   );
 };

@@ -7,21 +7,19 @@ import {
 import { Box, Heading } from "@chakra-ui/layout";
 import { type ReactNode } from "react";
 
-/** A line of the accordion */
+/** A line of the accordion. */
 export const AccordionLine = ({
   title,
   children,
 }: {
-  title: string;
+  title: ReactNode;
   children: ReactNode;
 }) => (
   <AccordionItem width="auto">
     <Heading>
       <AccordionButton>
         <Box as="span" flex="1" textAlign="left">
-          <Heading size="sm" color="veryAccent" marginRight="1em">
-            {title}
-          </Heading>
+          {title}
         </Box>
         <AccordionIcon />
       </AccordionButton>

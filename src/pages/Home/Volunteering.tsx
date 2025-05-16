@@ -1,10 +1,11 @@
 import { List, Text } from "@chakra-ui/react";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { AccordionLine } from "../../components/AccordionLine";
+import { AccordionLineTextTitle } from "../../components/AccordionLineTextTitle";
 import { ListItemAny, ListItemL } from "../../components/List";
 import { Section } from "../../components/Section";
 import { LanguageContext, TextL, getText } from "../../utils/Language";
+import { ExperienceLine } from "../../components/ExperienceLine";
 
 /** Section: Home > Volunteering */
 export const Volunteering = () => {
@@ -12,14 +13,20 @@ export const Volunteering = () => {
 
   return (
     <Section title={{ fr: "Bénévolat", en: "Volunteering" }}>
-      <AccordionLine
-        title={getText(
-          {
-            fr: "Binet Réseau • Président • Mai 2023 - Mars 2025",
-            en: "Binet Réseau • President • May 2023 - March 2025",
-          },
-          language
-        )}
+      <ExperienceLine
+        company={{
+          fr: "Binet Réseau",
+          en: "Binet Réseau",
+        }}
+        jobTitle={{
+          fr: "Président",
+          en: "President",
+        }}
+        dates={{
+          fr: "Mai 2023 - Mars 2025",
+          en: "May 2023 - March 2025",
+        }}
+        logo="BR.svg"
       >
         <List>
           <ListItemL>
@@ -82,16 +89,22 @@ export const Volunteering = () => {
             }}
           </ListItemL>
         </List>
-      </AccordionLine>
+      </ExperienceLine>
 
-      <AccordionLine
-        title={getText(
-          {
-            fr: "Binet Photo • Responsable web & Photographe • Novembre 2023 - Novembre 2024",
-            en: "Binet Photo • Web master & Photographer • November 2023 - November 2024",
-          },
-          language
-        )}
+      <ExperienceLine
+        company={{
+          fr: "Binet Photo",
+          en: "Binet Photo",
+        }}
+        jobTitle={{
+          fr: "Responsable web & Photographe",
+          en: "Web master & Photographer",
+        }}
+        dates={{
+          fr: "Novembre 2023 - Novembre 2024",
+          en: "November 2023 - November 2024",
+        }}
+        logo="BP.png"
       >
         <List>
           <ListItemAny>
@@ -114,16 +127,22 @@ export const Volunteering = () => {
             }}
           </ListItemL>
         </List>
-      </AccordionLine>
+      </ExperienceLine>
 
-      <AccordionLine
-        title={getText(
-          {
-            fr: "Photographe pour La Mouette Bâillonnée • 2017 - 2018",
-            en: 'Photographer for "La Mouette Bâillonnée" • 2017 - 2018',
-          },
-          language
-        )}
+      <ExperienceLine
+        company={{
+          fr: "La Mouette Bâillonnée",
+          en: "La Mouette Bâillonnée",
+        }}
+        jobTitle={{
+          fr: "Photographe",
+          en: "Photographer",
+        }}
+        dates={{
+          fr: "2017 - 2018",
+          en: "2017 - 2018",
+        }}
+        logo="mouetteb.webp"
       >
         <List>
           <ListItemL>
@@ -136,39 +155,7 @@ export const Volunteering = () => {
             }}
           </ListItemL>
         </List>
-      </AccordionLine>
-
-      <AccordionLine
-        title={getText(
-          {
-            fr: "Administration d’un serveur de jeux • 2014 - 2015",
-            en: "Administration of a game server • 2014 - 2015",
-          },
-          language
-        )}
-      >
-        <List>
-          <ListItemL>
-            {{
-              fr: "Administration bénévole de serveur",
-              en: "Voluntary server administration",
-            }}
-          </ListItemL>
-
-          <ListItemL>
-            {{
-              fr: "Spécialisé dans la lutte contre la triche",
-              en: "Specialized in the fight against cheating",
-            }}
-          </ListItemL>
-          <ListItemL>
-            {{
-              fr: "Serveur comptant un total de plus de 10 000 utilisateurs, à la tête d’une équipe de 10 modérateurs",
-              en: "Server with a total of more than 10,000 users, at the head of a team of 10 moderators",
-            }}
-          </ListItemL>
-        </List>
-      </AccordionLine>
+      </ExperienceLine>
     </Section>
   );
 };
