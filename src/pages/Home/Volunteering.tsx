@@ -15,8 +15,8 @@ export const Volunteering = () => {
       <AccordionLine
         title={getText(
           {
-            fr: "Binet Réseau • Président • Mai 2023 - ...",
-            en: "Binet Réseau • President • May 2023 - ...",
+            fr: "Binet Réseau • Président • Mai 2023 - Mars 2025",
+            en: "Binet Réseau • President • May 2023 - March 2025",
           },
           language
         )}
@@ -87,8 +87,8 @@ export const Volunteering = () => {
       <AccordionLine
         title={getText(
           {
-            fr: "Binet Photo • Responsable web & Photographe • Novembre 2023 - ...",
-            en: "Binet Photo • Web master & Photographer • November 2023 - ...",
+            fr: "Binet Photo • Responsable web & Photographe • Novembre 2023 - Novembre 2024",
+            en: "Binet Photo • Web master & Photographer • November 2023 - November 2024",
           },
           language
         )}
@@ -109,8 +109,8 @@ export const Volunteering = () => {
           </ListItemAny>
           <ListItemL>
             {{
-              fr: "Développement d'un nouveau site avec Typescript React et Adonis",
-              en: "Developing a new website with Typescript React and Adonis",
+              fr: "Photographe pour l'association",
+              en: "Photographer for the association",
             }}
           </ListItemL>
         </List>

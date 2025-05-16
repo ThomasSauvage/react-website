@@ -1,4 +1,4 @@
-import { Accordion, Grid } from "@chakra-ui/react";
+import { Accordion, Grid, GridItem } from "@chakra-ui/react";
 import { Academic } from "./Academic";
 import { Experiences } from "./Experiences";
 import { Intro } from "./Intro";
@@ -9,17 +9,37 @@ import { Volunteering } from "./Volunteering";
 /** Page: Home */
 const Home = () => {
   return (
-    <Grid alignContent="center" gap="3em">
-      <Print />
-      <Intro />
-      <Academic />
+    <Accordion allowToggle>
+      <Grid
+        templateColumns={{ base: "1fr", xl: "repeat(2, 1fr)" }}
+        gap="3em"
+        alignItems="center"
+      >
+        <GridItem colSpan={{ base: 1, xl: 2 }}>
+          <Print />
+        </GridItem>
 
-      <Accordion allowToggle>
-        <Skills />
-        <Experiences />
-        <Volunteering />
-      </Accordion>
-    </Grid>
+        <GridItem>
+          <Intro />
+        </GridItem>
+
+        <GridItem>
+          <Academic />
+        </GridItem>
+
+        <GridItem>
+          <Experiences />
+        </GridItem>
+
+        <GridItem>
+          <Volunteering />
+        </GridItem>
+
+        <GridItem colSpan={{ base: 1, xl: 2 }}>
+          <Skills />
+        </GridItem>
+      </Grid>
+    </Accordion>
   );
 };
 
