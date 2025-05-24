@@ -19,16 +19,71 @@ const Projects = () => {
         </TextL>
         <Center marginTop="2em" gap="1em">
           <Link to="https://github.com/ThomasSauvage" target="_blank">
-            <Button bg="accent" color="white" leftIcon={<FaGithub />}>
+            <Button bg="accent" color="white" rightIcon={<FaGithub />}>
               GitHub
             </Button>
           </Link>
           <Link to="https://gitlab.binets.fr/svg" target="_blank">
-            <Button bg="accent" color="white" leftIcon={<FaGitlab />}>
+            <Button bg="accent" color="white" rightIcon={<FaGitlab />}>
               GitLab
             </Button>
           </Link>
         </Center>
+      </Section>
+      <Section
+        title={{
+          fr: "Implémentation d'algorithmes cryptographiques modernes en Rust • 2024 - 2025",
+          en: "Implementing modern cryptographic algorithms in Rust • 2024 - 2025",
+        }}
+      >
+        <Flex
+          gap="1em"
+          alignItems="center"
+          justifyContent="space-around"
+          flexWrap="wrap"
+        >
+          <Image src="/projects/key.png" maxHeight="10em" />
+          <Image src="/projects/lock.png" maxHeight="10em" />
+
+          <VStack gap="1em">
+            <List>
+              <ListItemL>
+                {{
+                  fr: "Implémentation des algorithmes cryptographiques utilisés par le protocole Signal.",
+                  en: "Implementing from scratch the cryptographic algorithms used by the Signal Protocol.",
+                }}
+              </ListItemL>
+              <ListItemL>
+                {{
+                  fr: "Fait dans le cadre du cours de Cryptographie Avancée à l'École polytechnique, par le Prof. Benjamin Smith.",
+                  en: "Made as part of the Advanced Cryptography course at École polytechnique, by Prof. Benjamin Smith.",
+                }}
+              </ListItemL>
+              <ListItemL>
+                {{
+                  fr: "Implémentation de : ed25519, x25519, chacha20 poly1305 AEAD, shake128...",
+                  en: "Implementing: ed25519, x25519, chacha20 poly1305 AEAD, shake128...",
+                }}
+              </ListItemL>
+              <ListItemL>
+                {{
+                  fr: "Implémentation en Rust.",
+                  en: "Implementation in Rust.",
+                }}
+              </ListItemL>
+            </List>
+            <Link to="https://github.com/ThomasSauvage" target="_blank">
+              <Button bg="accent" color="white" rightIcon={<FaGithub />}>
+                <TextL>
+                  {{
+                    fr: "Implémentations sur GitHub",
+                    en: "Implementations on GitHub",
+                  }}
+                </TextL>
+              </Button>
+            </Link>
+          </VStack>
+        </Flex>
       </Section>
       <Section
         title={{
@@ -71,13 +126,19 @@ const Projects = () => {
                   en: "Nominated for the best École polytechnique collective scientific project of the year",
                 }}
               </ListItemL>
+              <ListItemL>
+                {{
+                  fr: "Implémentation en C et Python.",
+                  en: "Implementation in C and Python.",
+                }}
+              </ListItemL>
             </List>
             <Link to="https://github.com/pq-pake" target="_blank">
-              <Button bg="accent" color="white">
+              <Button bg="accent" color="white" rightIcon={<FaGithub />}>
                 <TextL>
                   {{
-                    fr: "Implémentations en C & Python sur GitHub",
-                    en: "C & Python implementations on GitHub",
+                    fr: "Implémentations sur GitHub",
+                    en: "Implementations on GitHub",
                   }}
                 </TextL>
               </Button>
