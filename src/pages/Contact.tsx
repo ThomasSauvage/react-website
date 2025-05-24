@@ -1,13 +1,23 @@
 import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
+  Box,
   Button,
+  Card,
   Center,
   Flex,
   FormLabel,
   Grid,
+  HStack,
   Image,
   Link,
   useClipboard,
   useToast,
+  Text,
+  VStack,
 } from "@chakra-ui/react";
 import { useMutation } from "@tanstack/react-query";
 import { useContext } from "react";
@@ -16,21 +26,13 @@ import { LanguageContext, TextL, getText } from "../utils/Language";
 import StringInputRhf from "../utils/StringInputRhf";
 import TextareaRhf from "../utils/TextareaRhf";
 import { type ContactForm, useContactForm } from "../utils/contactForm";
+import { LuClipboard, LuClipboardCheck } from "react-icons/lu";
+import { pgpFingerprint, pgpKey } from "../utils/pgpKey";
 
-// The email and phone are stored in an array to avoid bots to find them
+// The email is stored in an array to avoid bots to find them
 // Moreover, they are showed on the page as a picture
-// The email and phone are concatenated when the user clicks on the picture, for the link to work
-const email = [
-  "thomas",
-  ".",
-  "sauvage",
-  ".",
-  "2022",
-  "@",
-  "polytechnique",
-  ".",
-  "org",
-];
+// The email is concatenated when the user clicks on the picture, for the link to work
+const email = ["thomas", "@", "sauvage", ".", "pm"];
 
 /** Page: Contact */
 const Contact = () => {
@@ -44,7 +46,41 @@ const Contact = () => {
   const showToast = useToast();
   const { language } = useContext(LanguageContext);
 
-  const { onCopy, hasCopied } = useClipboard(email.join(""));
+  const copyData = {
+    email: {
+      clipboard: useClipboard(email.join("")),
+      message: {
+        fr: "Adresse mail copiée dans le presse-papier",
+        en: "Email copied to clipboard",
+      },
+    },
+    pgpKey: {
+      clipboard: useClipboard(pgpKey),
+      message: {
+        fr: "Clé PGP copiée dans le presse-papier",
+        en: "PGP Key copied to clipboard",
+      },
+    },
+    pgpFingerprint: {
+      clipboard: useClipboard(pgpFingerprint),
+      message: {
+        fr: "Empreinte PGP copiée dans le presse-papier",
+        en: "PGP Fingerprint copied to clipboard",
+      },
+    },
+  };
+
+  const copy = (key: keyof typeof copyData) => {
+    const { clipboard, message } = copyData[key];
+    clipboard.onCopy();
+
+    showToast({
+      title: getText(message, language),
+      status: "info",
+      duration: 5000,
+      isClosable: true,
+    });
+  };
 
   // The message is sent to a service called ntfy.sh, to receive the message on my phone
   const { mutate } = useMutation(
@@ -91,22 +127,6 @@ const Contact = () => {
 
   const isValid = Object.keys(errors).length === 0;
 
-  const copyEmail = () => {
-    onCopy();
-    showToast({
-      title: getText(
-        {
-          fr: "Adresse mail copiée dans le presse-papier",
-          en: "Email copied to clipboard",
-        },
-        language
-      ),
-      status: "info",
-      duration: 5000,
-      isClosable: true,
-    });
-  };
-
   return (
     <Grid gap="3em">
       <Section title={{ fr: "Mes coordonnées", en: "My contact" }}>
@@ -118,24 +138,158 @@ const Contact = () => {
             }}
           </TextL>
           <Button
-            variant="link"
+            variant="unstyled"
             onTouchStart={() => {
-              if (hasCopied) return;
-              copyEmail();
+              if (copyData.email.clipboard.hasCopied) return;
+              copy("email");
             }}
             onClick={() => {
-              if (hasCopied) return;
-              copyEmail();
+              if (copyData.email.clipboard.hasCopied) return;
+              copy("email");
             }}
+            marginLeft="1em"
+            color="accent"
+            alignItems="center"
+            justifyContent="center"
+            flexDirection="row"
+            display="flex"
           >
+            <span>thomas</span>
             <Image
-              src="/contact/mail.png"
+              src="/contact/at.png"
               height="1.3em"
-              marginLeft="1em"
               marginBottom="-0.3em"
+              marginLeft="0.1em"
+              marginRight="0.1em"
             />
+            <span>sauvage.pm</span>
+
+            <Button
+              color="accent"
+              marginLeft="0.8em"
+              rightIcon={
+                copyData.email.clipboard.hasCopied ? (
+                  <LuClipboardCheck />
+                ) : (
+                  <LuClipboard />
+                )
+              }
+              disabled={copyData.email.clipboard.hasCopied}
+            >
+              <TextL>
+                {{
+                  fr: "Copier",
+                  en: "Copy",
+                }}
+              </TextL>
+            </Button>
           </Button>
         </Flex>
+
+        <Card padding={0} marginTop="2em" width="fit-content">
+          <Accordion allowToggle>
+            <AccordionItem border="none">
+              <AccordionButton p={0}>
+                <Card
+                  width="100%"
+                  flexDirection="row"
+                  padding="1em"
+                  backgroundColor="accent"
+                >
+                  <Box as="span" flex="1" textAlign="left">
+                    <Text size="sm" color="white" marginLeft="1em">
+                      {getText(
+                        {
+                          fr: "Pour chiffrer vos messages, vous pouvez utiliser ma clé PGP",
+                          en: "To encrypt your messages, you can use my PGP key",
+                        },
+                        language
+                      )}
+                    </Text>
+                  </Box>
+                  <AccordionIcon color="white" />
+                </Card>
+              </AccordionButton>
+
+              <AccordionPanel p={0} margin="2em">
+                <VStack justifyContent="space-between">
+                  <HStack>
+                    <TextL>
+                      {{
+                        fr: "Empreinte",
+                        en: "Fingerprint",
+                      }}
+                    </TextL>
+                    <Button
+                      color="accent"
+                      marginLeft="0.8em"
+                      rightIcon={
+                        copyData.pgpFingerprint.clipboard.hasCopied ? (
+                          <LuClipboardCheck />
+                        ) : (
+                          <LuClipboard />
+                        )
+                      }
+                      disabled={copyData.pgpFingerprint.clipboard.hasCopied}
+                      onClick={() => {
+                        if (copyData.pgpFingerprint.clipboard.hasCopied) return;
+                        copy("pgpFingerprint");
+                      }}
+                    >
+                      <TextL>
+                        {{
+                          fr: "Copier",
+                          en: "Copy",
+                        }}
+                      </TextL>
+                    </Button>
+                  </HStack>
+                  <code style={{ textAlign: "center" }}>{pgpFingerprint}</code>
+
+                  <HStack marginTop="2em">
+                    <TextL>
+                      {{
+                        fr: "Clé PGP",
+                        en: "PGP Key",
+                      }}
+                    </TextL>
+                    <Button
+                      color="accent"
+                      marginLeft="0.8em"
+                      rightIcon={
+                        copyData.pgpKey.clipboard.hasCopied ? (
+                          <LuClipboardCheck />
+                        ) : (
+                          <LuClipboard />
+                        )
+                      }
+                      disabled={copyData.pgpKey.clipboard.hasCopied}
+                      onClick={() => {
+                        if (copyData.pgpKey.clipboard.hasCopied) return;
+                        copy("pgpKey");
+                      }}
+                    >
+                      <TextL>
+                        {{
+                          fr: "Copier",
+                          en: "Copy",
+                        }}
+                      </TextL>
+                    </Button>
+                  </HStack>
+                  <code
+                    style={{
+                      whiteSpace: "pre-wrap",
+                      wordBreak: "break-all",
+                    }}
+                  >
+                    {pgpKey}
+                  </code>
+                </VStack>
+              </AccordionPanel>
+            </AccordionItem>
+          </Accordion>
+        </Card>
       </Section>
 
       <Section title={{ fr: "Mes réseaux sociaux", en: "My social media" }}>
