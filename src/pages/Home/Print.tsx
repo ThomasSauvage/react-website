@@ -17,7 +17,7 @@ export const Print = () => {
           }}
         </TextL>
         <Link
-          href={`/Thomas Sauvage - ${getText(
+          href={`/cv/Thomas Sauvage - ${getText(
             { fr: "CV", en: "Resume" },
             language
           )}.pdf`}
