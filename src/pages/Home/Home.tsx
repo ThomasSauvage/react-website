@@ -2,7 +2,6 @@ import { Accordion, Grid, GridItem } from "@chakra-ui/react";
 import { Academic } from "./Academic";
 import { Experiences } from "./Experiences";
 import { Intro } from "./Intro";
-import { Print } from "./Print";
 import { Skills } from "./Skills";
 import { Volunteering } from "./Volunteering";
 
@@ -15,10 +14,6 @@ const Home = () => {
         gap="3em"
         alignItems="center"
       >
-        <GridItem colSpan={{ base: 1, xl: 2 }}>
-          <Print />
-        </GridItem>
-
         <Intro />
         <Academic />
         <Experiences />
