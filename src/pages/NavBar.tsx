@@ -88,10 +88,10 @@ export const NavBar = () => {
                     <MenuItem
                       height="3em"
                       margin={"0.5em 0 0.5em 0"}
-                      background={actualPath === path ? "veryAccent" : ""}
+                      background={actualPath === path ? "accent" : ""}
                       color={actualPath === path ? "white" : "black"}
                       _hover={{
-                        background: "accent",
+                        background: "veryAccent",
                         color: "white",
                       }}
                       borderRadius="1em"
