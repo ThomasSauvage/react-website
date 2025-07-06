@@ -1,96 +1,114 @@
-import {
-  Table,
-  TableContainer,
-  Tbody,
-  Td,
-  Th,
-  Thead,
-  Tr,
-} from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { List } from "@chakra-ui/react";
 import { Section } from "../../components/Section";
-import { TextL } from "../../utils/Language";
+import { ExperienceLine } from "../../components/ExperienceLine";
+import { ListItemL } from "../../components/List";
 
 /** Section: Home > Academic */
 export const Academic = () => {
   return (
     <Section title={{ fr: "Ma formation", en: "My academic background" }}>
-      <TableContainer>
-        <Table variant="striped">
-          <Thead width="auto">
-            <Tr>
-              <Th>
-                <TextL>{{ fr: "Date", en: "Date" }}</TextL>
-              </Th>
-              <Th>
-                <TextL>{{ fr: "Formation", en: "School" }}</TextL>
-              </Th>
-              <Th>
-                <TextL>{{ fr: "Commentaire", en: "Remark" }}</TextL>
-              </Th>
-            </Tr>
-          </Thead>
-          <Tbody width="auto">
-            <Tr>
-              <Td whiteSpace="normal">2022 - 2025</Td>
-              <Td color="veryAccent" fontWeight="bold" whiteSpace="normal">
-                <Link
-                  to="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049496824"
-                  target="_blank"
-                >
-                  École polytechnique
-                </Link>
-              </Td>
-              <Td whiteSpace="normal">
-                <TextL>
-                  {{
-                    fr: "3ème année • Cycle ingénieur polytechnicien",
-                    en: "Third-year (Master 2) • France top-ranking engineering university",
-                  }}
-                </TextL>
-              </Td>
-            </Tr>
-            <Tr>
-              <Td whiteSpace="normal">2020 - 2022</Td>
-              <Td whiteSpace="normal">
-                <TextL>
-                  {{
-                    fr: "MPSI & MP* (Maths sup/Maths spé)",
-                    en: "Preparatory classes (MPSI & MP*)",
-                  }}
-                </TextL>
-              </Td>
-              <Td whiteSpace="normal">
-                <TextL>
-                  {{
-                    fr: "Au Lycée Marcelin Berthelot",
-                    en: "At Lycée Marcelin Berthelot",
-                  }}
-                </TextL>
-              </Td>
-            </Tr>
-            <Tr>
-              <Td whiteSpace="normal">2020</Td>
-              <Td whiteSpace="normal">
-                <TextL>
-                  {{
-                    fr: "Baccalauréat Scientifique",
-                    en: 'Scientific "Baccalauréat"',
-                  }}
-                </TextL>
-              </Td>
-              <Td whiteSpace="normal">
-                <TextL>
-                  {{
-                    fr: "Mention Très Bien",
-                    en: "High school leaving exams. With highest honors",
-                  }}
-                </TextL>
-              </Td>
-            </Tr>
-          </Tbody>
-        </Table>
-      </TableContainer>
+      <ExperienceLine
+        company={{
+          fr: "Cycle ingénieur polytechnicien (X2022)",
+          en: "France top-ranking engineering university",
+        }}
+        jobTitle={{
+          fr: "École polytechnique",
+          en: "École polytechnique",
+        }}
+        dates={{
+          fr: "2022 - 2025",
+          en: "2022 - 2025",
+        }}
+        logo="X.svg"
+      >
+        <List>
+          <ListItemL>
+            {{
+              fr: "Actuellement en 3ème année",
+              en: "Currently in third year",
+            }}
+          </ListItemL>
+          <ListItemL>
+            {{
+              fr: "Spécialisation : Réseaux & Cybersécurité",
+              en: "Specialization: Networks & Cybersecurity",
+            }}
+          </ListItemL>
+          <ListItemL>
+            {{
+              fr: "Sport : Badminton",
+              en: "Sport: Badminton",
+            }}
+          </ListItemL>
+          <ListItemL>
+            {{
+              fr: "Récompensé : Outstanding leadership & Outstanding investment",
+              en: "Awarded: Outstanding leadership & Outstanding investment",
+            }}
+          </ListItemL>
+        </List>
+      </ExperienceLine>
+      <ExperienceLine
+        company={{
+          fr: "École d'ingéneur spécialisée en informatique",
+          en: "Engineering university specialized in computer science",
+        }}
+        jobTitle={{
+          fr: "Télécom Paris",
+          en: "Télécom Paris",
+        }}
+        dates={{
+          fr: "2025 - 2026",
+          en: "2025 - 2026",
+        }}
+        logo="telecom.svg"
+      >
+        <List>
+          <ListItemL>
+            {{
+              fr: "École d'application dans le cadre du cycle ingénieur polytechnicien",
+              en: "Application school as part of the polytechnic engineering cycle",
+            }}
+          </ListItemL>
+          <ListItemL>
+            {{
+              fr: "Specialisation : Grandes infrastructures du numérique",
+              en: "Specialization: Large digital infrastructures",
+            }}
+          </ListItemL>
+        </List>
+      </ExperienceLine>
+      <ExperienceLine
+        company={{
+          fr: "Classes préparatoires aux grandes écoles - MPSI & MP*",
+          en: "Preparatory classes - MPSI & MP*",
+        }}
+        jobTitle={{
+          fr: "Lycée Marcelin Berthelot",
+          en: "Lycée Marcelin Berthelot",
+        }}
+        dates={{
+          fr: "2020 - 2022",
+          en: "2020 - 2022",
+        }}
+        logo="lmb.svg"
+      >
+        <List>
+          <ListItemL>
+            {{
+              fr: "Deux années de préparation aux concours d'entrée des grandes écoles d'ingénieurs",
+              en: "Two years of preparation for the entrance exams to the engineering universities",
+            }}
+          </ListItemL>
+          <ListItemL>
+            {{
+              fr: "Spécialisation : Mathématiques, Physique, Informatique",
+              en: "Specialization: Mathematics, Physics, Computer Science",
+            }}
+          </ListItemL>
+        </List>
+      </ExperienceLine>
     </Section>
   );
 };

@@ -28,7 +28,7 @@ export const NavBar = () => {
   return (
     <Stack
       direction={{ base: "column", lg: "row" }}
-      margin="3em"
+      margin={{ base: "1em", lg: "3em" }}
       padding="1em"
       justify="space-around"
       textAlign="center"
@@ -80,31 +80,29 @@ export const NavBar = () => {
             _expanded={{ background: "veryAccent" }}
           />
 
-          <MenuList alignItems="center">
+          <MenuList alignItems="center" padding="0 2em 0 2em">
             {routes.map(
               ({ name, path, logo }) =>
                 name && (
-                  <Center key={path}>
-                    <NavLink to={path}>
-                      <MenuItem
-                        height="3em"
-                        background={actualPath === path ? "accent" : ""}
-                        borderRadius="1em"
-                      >
-                        <Icon
-                          as={logo}
-                          color={actualPath === path ? "white" : "black"}
-                        />
-                        <TextL
-                          marginLeft="1em"
-                          fontSize="lg"
-                          color={actualPath === path ? "white" : "black"}
-                        >
-                          {name}
-                        </TextL>
-                      </MenuItem>
-                    </NavLink>
-                  </Center>
+                  <NavLink key={path} to={path} style={{ width: "100%" }}>
+                    <MenuItem
+                      height="3em"
+                      margin={"0.5em 0 0.5em 0"}
+                      background={actualPath === path ? "veryAccent" : ""}
+                      color={actualPath === path ? "white" : "black"}
+                      _hover={{
+                        background: "accent",
+                        color: "white",
+                      }}
+                      borderRadius="1em"
+                      justifyContent="center"
+                    >
+                      <Icon as={logo} />
+                      <TextL marginLeft="1em" fontSize="lg">
+                        {name}
+                      </TextL>
+                    </MenuItem>
+                  </NavLink>
                 )
             )}
           </MenuList>
