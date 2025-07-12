@@ -35,7 +35,7 @@ export const NavBar = () => {
       backgroundColor="accent"
       borderRadius="1em"
     >
-      <Heading color="white" margin="0.3em">
+      <Heading color="white" margin="0.3em" as="h1">
         Thomas Sauvage
       </Heading>
 

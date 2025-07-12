@@ -65,15 +65,17 @@ export const LanguageSelector = () => {
         onClick={() => setLanguage("fr")}
         backgroundColor={language === "fr" ? "white" : "transparent"}
         _hover={{}}
+        aria-label="Select French Language"
       >
-        <Image src="/flags/fr.svg" width="1.5em" />
+        <Image src="/flags/fr.svg" width="1.5em" alt="FR" />
       </Button>
       <Button
         onClick={() => setLanguage("en")}
         backgroundColor={language === "en" ? "white" : "transparent"}
         _hover={{}}
+        aria-label="Select English Language"
       >
-        <Image src="/flags/en.svg" width="1.5em" />
+        <Image src="/flags/en.svg" width="1.5em" alt="EN" />
       </Button>
     </HStack>
   );

@@ -161,6 +161,7 @@ const Contact = () => {
               marginBottom="-0.3em"
               marginLeft="0.1em"
               marginRight="0.1em"
+              alt="[at]"
             />
             <span>sauvage.pm</span>
 
