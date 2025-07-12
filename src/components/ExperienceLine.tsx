@@ -30,16 +30,16 @@ export const ExperienceLine = ({
         <HStack spacing="1em" alignItems="center">
           <Image
             src={`/logos/${logo}`}
-            alt="Logo"
+            alt={"Logo of " + getText(company, language)}
             boxSize="4em"
             fit="contain"
           />
           <VStack spacing="0" alignItems="flex-start">
-            <Heading size="sm" color="veryAccent" marginRight="1em">
+            <Heading size="sm" color="veryAccent" marginRight="1em" as="h3">
               {getText(jobTitle, language)}
             </Heading>
             <TextL>{company}</TextL>
-            <TextL fontSize="sm" color="gray.500">
+            <TextL fontSize="sm" color="gray.600">
               {dates}
             </TextL>
           </VStack>

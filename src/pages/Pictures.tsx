@@ -32,6 +32,7 @@ const OnePicture = ({ name }: { name: string }) => {
         width={{ base: "90%", md: "auto" }}
         onClick={onOpen}
         borderRadius="0.5em"
+        alt={`Picture ${name}`}
       />
       <Modal isOpen={isOpen} onClose={onClose} size="full">
         <ModalOverlay />
@@ -46,6 +47,7 @@ const OnePicture = ({ name }: { name: string }) => {
                 maxHeight="90vh"
                 maxWidth="90vw"
                 objectFit="cover"
+                alt={`Picture ${name}`}
               />
             </Center>
           </ModalBody>

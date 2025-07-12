@@ -42,8 +42,8 @@ const Projects = () => {
           justifyContent="space-around"
           flexWrap="wrap"
         >
-          <Image src="/projects/key.png" maxHeight="10em" />
-          <Image src="/projects/lock.png" maxHeight="10em" />
+          <Image src="/projects/key.png" maxHeight="10em" alt="key" />
+          <Image src="/projects/lock.png" maxHeight="10em" alt="lock" />
 
           <VStack gap="1em">
             <List>
@@ -97,8 +97,8 @@ const Projects = () => {
           justifyContent="space-around"
           flexWrap="wrap"
         >
-          <Image src="/projects/cake.svg" maxHeight="10em" />
-          <Image src="/projects/anssi.png" maxHeight="10em" />
+          <Image src="/projects/cake.svg" maxHeight="10em" alt="cake" />
+          <Image src="/projects/anssi.png" maxHeight="10em" alt="anssi logo" />
 
           <VStack gap="1em">
             <List>
@@ -153,7 +153,11 @@ const Projects = () => {
           justifyContent="space-around"
           flexWrap="wrap"
         >
-          <Image src="/projects/chocapix.png" maxHeight="20em" />
+          <Image
+            src="/projects/chocapix.png"
+            maxHeight="20em"
+            alt="Chocapix logo"
+          />
           <List>
             <ListItemL>
               {{
@@ -195,8 +199,16 @@ const Projects = () => {
           justifyContent="space-around"
           flexWrap="wrap"
         >
-          <Image src="/projects/dispositif_exp.jpg" maxHeight="15em" />
-          <Image src="/projects/simulation.png" maxHeight="15em" />
+          <Image
+            src="/projects/dispositif_exp.jpg"
+            maxHeight="15em"
+            alt="Picture of the experimental setup"
+          />
+          <Image
+            src="/projects/simulation.png"
+            maxHeight="15em"
+            alt="Simulation of the reversal"
+          />
           <List>
             <ListItemL>
               {{
@@ -238,7 +250,11 @@ const Projects = () => {
           justifyContent="space-around"
           flexWrap="wrap"
         >
-          <Image src="/projects/telecom.png" maxHeight="25em" />
+          <Image
+            src="/projects/telecom.png"
+            maxHeight="25em"
+            alt="Screenshot of the app"
+          />
           <List>
             <ListItemL>
               {{
@@ -286,7 +302,11 @@ const Projects = () => {
           justifyContent="space-around"
           flexWrap="wrap"
         >
-          <Image src="/projects/percolation.png" maxHeight="20em" />
+          <Image
+            src="/projects/percolation.png"
+            maxHeight="20em"
+            alt="Graph showing percolation"
+          />
           <List>
             <ListItemL>
               {{
