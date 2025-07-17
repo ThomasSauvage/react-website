@@ -1,76 +1,21 @@
 import { Center, Grid, Spinner } from "@chakra-ui/react";
-import {
-  lazy,
-  Suspense,
-  type ComponentType,
-  type LazyExoticComponent,
-} from "react";
 
-import { type IconType } from "react-icons";
-import {
-  AiOutlineHome,
-  AiOutlinePhone,
-  AiOutlinePicture,
-} from "react-icons/ai";
-import { MdOutlineScience } from "react-icons/md";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import packageJson from "../package.json";
 import { NavBar } from "./pages/NavBar";
-import { type TextLanguage } from "./utils/Language";
-import Home from "./pages/Home/Home";
+import { languages } from "./utils/Language";
+import { DynamicHeaders } from "./pages/DynamicHeaders";
+import { Routing } from "./pages/Routing";
+import { lazy, Suspense } from "react";
 
-/** A route of the app */
-interface RoutePath {
-  path: string;
-  name: TextLanguage | null;
-  logo?: IconType;
-  Element: ComponentType | LazyExoticComponent<ComponentType>;
-}
-
-/** List of all routes for this app,
- *  with logo and name for the NavBar
- *
- *  If the name is null, the route is not displayed in the NavBar
- */
-export const routes: RoutePath[] = [
-  {
-    path: "/",
-    name: { fr: "Accueil", en: "Home" },
-    logo: AiOutlineHome,
-    Element: Home, // No lazy loading for the home page, for faster first load
-  },
-  {
-    path: "/projects",
-    name: { fr: "Projets", en: "Projects" },
-    logo: MdOutlineScience,
-    Element: lazy(() => import("./pages/Projects")),
-  },
-  {
-    path: "/pictures",
-    name: { fr: "Photos", en: "Pictures" },
-    logo: AiOutlinePicture,
-    Element: lazy(() => import("./pages/Pictures")),
-  },
-  {
-    path: "/contact",
-    name: { fr: "Me contacter", en: "Contact me" },
-    logo: AiOutlinePhone,
-    Element: lazy(() => import("./pages/Contact")),
-  },
-  {
-    path: "*",
-    name: null,
-    Element: lazy(() => import("./pages/NotFoundPage")),
-  },
-];
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 const App = () => {
-  // HashRouter replaces BrowserRouter to allow the app to be hosted on GitHub Pages
-
   console.log(` -> Welcome to my website, version ${packageJson.version}`);
 
   return (
-    <HashRouter>
+    <BrowserRouter>
+      <DynamicHeaders />
       <Grid
         marginLeft={{ base: 0, lg: "10em" }}
         marginRight={{ base: 0, lg: "10em" }}
@@ -78,26 +23,31 @@ const App = () => {
       >
         <NavBar />
         <Routes>
-          {routes.map(({ path, Element }) => (
+          <Route path="/" element={<Routing language={null} />} />
+          {languages.map((lang) => (
             <Route
-              path={path}
-              element={
-                <Suspense
-                  fallback={
-                    <Center marginTop="30vh">
-                      <Spinner size="xl" />
-                    </Center>
-                  }
-                >
-                  <Element />
-                </Suspense>
-              }
-              key={path}
+              key={lang}
+              path={`/${lang}/*`}
+              element={<Routing language={lang} />}
             />
           ))}
+          <Route
+            path="*"
+            element={
+              <Suspense
+                fallback={
+                  <Center marginTop="30vh">
+                    <Spinner size="xl" />
+                  </Center>
+                }
+              >
+                <NotFoundPage />
+              </Suspense>
+            }
+          />
         </Routes>
       </Grid>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

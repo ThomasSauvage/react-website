@@ -2,11 +2,14 @@ import { List, Text } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { ListItemAny, ListItemL } from "../../components/List";
 import { Section } from "../../components/Section";
-import { TextL } from "../../utils/Language";
+import { LanguageContext, TextL } from "../../utils/Language";
 import { ExperienceLine } from "../../components/ExperienceLine";
+import { useContext } from "react";
 
 /** Section: Home > Volunteering */
 export const Volunteering = () => {
+  const { language } = useContext(LanguageContext);
+
   return (
     <Section title={{ fr: "Bénévolat", en: "Volunteering" }}>
       <ExperienceLine
@@ -56,7 +59,7 @@ export const Volunteering = () => {
                 en: "Web development, see my ",
               }}
             </TextL>
-            <NavLink to="/projects">
+            <NavLink to={`/${language}/projects`}>
               <TextL as="span" color="accent">
                 {{
                   fr: "projets",

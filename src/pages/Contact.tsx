@@ -166,6 +166,7 @@ const Contact = () => {
             <span>sauvage.pm</span>
 
             <Button
+              as="div"
               color="accent"
               marginLeft="0.8em"
               rightIcon={
