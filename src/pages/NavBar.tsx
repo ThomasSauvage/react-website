@@ -62,7 +62,9 @@ export const NavBar = () => {
                   backgroundColor="veryAccent"
                   borderWidth="2px"
                   borderColor={
-                    actualPath === `/${language}${path}`
+                    actualPath === `/${language}${path}` ||
+                    actualPath === `/${language}${path}/` ||
+                    (path === "/" && actualPath === `/${language}`)
                       ? "white"
                       : "veryAccent"
                   }
