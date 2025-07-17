@@ -1,6 +1,6 @@
 import { Center, Grid, Spinner } from "@chakra-ui/react";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import packageJson from "../package.json";
 import { NavBar } from "./pages/NavBar";
 import { languages } from "./utils/Language";
@@ -14,7 +14,7 @@ const App = () => {
   console.log(` -> Welcome to my website, version ${packageJson.version}`);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <DynamicHeaders />
       <Grid
         marginLeft={{ base: 0, lg: "10em" }}
@@ -47,7 +47,7 @@ const App = () => {
           />
         </Routes>
       </Grid>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
