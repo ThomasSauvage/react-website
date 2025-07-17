@@ -1,31 +1,33 @@
 import { Button, HStack, Image, Text, type TextProps } from "@chakra-ui/react";
-import React, { useContext } from "react";
-import { usePersistentState } from "./usePersistantState";
+import React, { useContext, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
-type Language = "fr" | "en";
+export const languages = ["fr", "en"] as const;
+export type Language = (typeof languages)[number];
 
 export const LanguageContext = React.createContext({
   language: "en" as Language,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  setLanguage: (_language: Language) => {},
+  updateLanguageRouteChange: (_language: Language) => {},
 });
 
 /** Context provider for:
  *  - language: Current language of the page
- *  - setLanguage: To change the language
+ *  - setLanguage: To update the language, not change it!
  */
 export const LanguageProvider = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
-  const [language, setLanguage] = usePersistentState<Language>(
-    navigator.language.toLowerCase().includes("fr") ? "fr" : "en",
-    "language"
-  );
+  // There is a default here, but it should be overridden by the URL
+  // See Routing.tsx
+  const [language, setLanguage] = useState<Language>("en");
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage }}>
+    <LanguageContext.Provider
+      value={{ language, updateLanguageRouteChange: setLanguage }}
+    >
       {children}
     </LanguageContext.Provider>
   );
@@ -57,7 +59,22 @@ export const TextL = ({ children, ...props }: TextLProps) => {
 
 /** Fancy component to select the language */
 export const LanguageSelector = () => {
-  const { language, setLanguage } = useContext(LanguageContext);
+  const { language, updateLanguageRouteChange } = useContext(LanguageContext);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const setLanguage = (lang: Language) => {
+    if (language === lang) {
+      return;
+    }
+
+    updateLanguageRouteChange(lang); // Not really needed here, as Routing.tsx will handle it
+
+    // Navigate to the same path but with the new language
+    const rightPath = location.pathname.split("/").slice(2).join("/");
+    navigate(`/${lang}${rightPath ? `/${rightPath}` : ""}`, { replace: true });
+  };
 
   return (
     <HStack width="10em" justifyContent="center">

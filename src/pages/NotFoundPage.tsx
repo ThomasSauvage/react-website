@@ -4,8 +4,11 @@ import { Flex, Heading, Text } from "@chakra-ui/react";
 const NotFoundPage = () => {
   return (
     <Flex flexDirection="column" alignItems="center" margin="3em">
-      <Heading margin="2em"> Introuvable ! </Heading>
-      <Text> La page cherchée n'a pas été trouvée </Text>
+      <Heading marginTop="2em" marginBottom="0.5em">
+        {" "}
+        404 !{" "}
+      </Heading>
+      <Text> The requested page was not found </Text>
     </Flex>
   );
 };

@@ -14,8 +14,9 @@ import {
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { NavLink, useLocation } from "react-router-dom";
-import { routes } from "../App";
-import { LanguageSelector, TextL } from "../utils/Language";
+import { routes } from "./Routing";
+import { LanguageContext, LanguageSelector, TextL } from "../utils/Language";
+import { useContext } from "react";
 
 /** The navigation bar, above the pages
  *
@@ -24,6 +25,7 @@ import { LanguageSelector, TextL } from "../utils/Language";
  */
 export const NavBar = () => {
   const { pathname: actualPath } = useLocation();
+  const { language } = useContext(LanguageContext);
 
   return (
     <Stack
@@ -50,13 +52,20 @@ export const NavBar = () => {
         {routes.map(
           ({ name, path, logo }) =>
             name && (
-              <NavLink to={path} key={path}>
+              <NavLink
+                to={`/${language}${path !== "/" ? path : ""}`}
+                key={path}
+              >
                 <Button
                   marginRight="1em"
                   marginLeft="1em"
                   backgroundColor="veryAccent"
                   borderWidth="2px"
-                  borderColor={actualPath === path ? "white" : "veryAccent"}
+                  borderColor={
+                    actualPath === `/${language}${path}`
+                      ? "white"
+                      : "veryAccent"
+                  }
                   color="white"
                   _hover={{ color: "accent" }}
                   leftIcon={<Icon as={logo} />}
