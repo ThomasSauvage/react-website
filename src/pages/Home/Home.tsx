@@ -11,7 +11,6 @@ const Home = () => {
     <Accordion allowToggle>
       <Grid
         templateColumns={{ base: "1fr", xl: "repeat(2, 1fr)" }}
-        gap="3em"
         alignItems="center"
       >
         <Intro />
