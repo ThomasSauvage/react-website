@@ -37,6 +37,9 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Create other language HTML files
+        run: npm run copy-html
+
       - name: Setup Github Pages
         uses: actions/configure-pages@v5
 
