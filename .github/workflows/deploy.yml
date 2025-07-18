@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   build:
-    name: Build
+    name: Build and Deploy
     runs-on: ubuntu-latest
 
     steps:
@@ -36,26 +36,6 @@ jobs:
 
       - name: Build project
         run: npm run build
-
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v4
-        with:
-          name: production-files
-          path: ./dist
-
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Download production-ready build files
-        uses: actions/download-artifact@v4
-        with:
-          name: production-files
-          path: ./dist
 
       - name: Setup Github Pages
         uses: actions/configure-pages@v5
