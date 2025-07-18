@@ -24,7 +24,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "copy-html": "cp dist/index.html dist/fr.html && cp dist/index.html dist/en.html"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
