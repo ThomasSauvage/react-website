@@ -27,6 +27,14 @@ export const NavBar = () => {
   const { pathname: actualPath } = useLocation();
   const { language } = useContext(LanguageContext);
 
+  const getLocalizedPath = (path: string) =>
+    `/${language}${path !== "/" ? path : ""}`;
+
+  const currentPathIs = (path: string) =>
+    actualPath === getLocalizedPath(path) ||
+    actualPath === `${getLocalizedPath(path)}/` ||
+    (path === "/" && actualPath === `/${language}`);
+
   return (
     <Stack
       direction={{ base: "column", lg: "row" }}
@@ -52,22 +60,13 @@ export const NavBar = () => {
         {routes.map(
           ({ name, path, logo }) =>
             name && (
-              <NavLink
-                to={`/${language}${path !== "/" ? path : ""}`}
-                key={path}
-              >
+              <NavLink to={getLocalizedPath(path)} key={path}>
                 <Button
                   marginRight="1em"
                   marginLeft="1em"
                   backgroundColor="veryAccent"
                   borderWidth="2px"
-                  borderColor={
-                    actualPath === `/${language}${path}` ||
-                    actualPath === `/${language}${path}/` ||
-                    (path === "/" && actualPath === `/${language}`)
-                      ? "white"
-                      : "veryAccent"
-                  }
+                  borderColor={currentPathIs(path) ? "white" : "veryAccent"}
                   color="white"
                   _hover={{ color: "accent" }}
                   leftIcon={<Icon as={logo} />}
@@ -95,12 +94,16 @@ export const NavBar = () => {
             {routes.map(
               ({ name, path, logo }) =>
                 name && (
-                  <NavLink key={path} to={path} style={{ width: "100%" }}>
+                  <NavLink
+                    key={path}
+                    to={getLocalizedPath(path)}
+                    style={{ width: "100%" }}
+                  >
                     <MenuItem
                       height="3em"
                       margin={"0.5em 0 0.5em 0"}
-                      background={actualPath === path ? "accent" : ""}
-                      color={actualPath === path ? "white" : "black"}
+                      background={currentPathIs(path) ? "accent" : ""}
+                      color={currentPathIs(path) ? "white" : "black"}
                       _hover={{
                         background: "veryAccent",
                         color: "white",
