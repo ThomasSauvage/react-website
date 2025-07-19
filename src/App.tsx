@@ -21,6 +21,7 @@ const App = () => {
         ? "fr"
         : "en";
 
+      updateLanguageRouteChange(navigatorLang);
       window.history.replaceState(null, "", `/${navigatorLang}`);
       return;
     }
