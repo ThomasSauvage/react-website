@@ -1,6 +1,6 @@
 import { Button, HStack, Image, Text, type TextProps } from "@chakra-ui/react";
 import React, { useContext, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export const languages = ["fr", "en"] as const;
 export type Language = (typeof languages)[number];
@@ -61,7 +61,6 @@ export const TextL = ({ children, ...props }: TextLProps) => {
 export const LanguageSelector = () => {
   const { language, updateLanguageRouteChange } = useContext(LanguageContext);
 
-  const navigate = useNavigate();
   const location = useLocation();
 
   const setLanguage = (lang: Language) => {
@@ -72,8 +71,11 @@ export const LanguageSelector = () => {
     updateLanguageRouteChange(lang); // Not really needed here, as Routing.tsx will handle it
 
     // Navigate to the same path but with the new language
-    const rightPath = location.pathname.split("/").slice(2).join("/");
-    navigate(`/${lang}${rightPath ? `/${rightPath}` : ""}`, { replace: true });
+    const newPath = `/${lang}${
+      location.pathname !== "/" ? `#${location.pathname}` : ""
+    }`;
+
+    window.history.replaceState(null, "", newPath);
   };
 
   return (

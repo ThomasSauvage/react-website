@@ -13,10 +13,9 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { routes } from "./Routing";
-import { LanguageContext, LanguageSelector, TextL } from "../utils/Language";
-import { useContext } from "react";
+import { LanguageSelector, TextL } from "../utils/Language";
 
 /** The navigation bar, above the pages
  *
@@ -25,15 +24,21 @@ import { useContext } from "react";
  */
 export const NavBar = () => {
   const { pathname: actualPath } = useLocation();
-  const { language } = useContext(LanguageContext);
 
-  const getLocalizedPath = (path: string) =>
-    `/${language}${path !== "/" ? path : ""}`;
+  const getPath = (path: string) => `${path !== "/" ? path : ""}`;
+
+  const changePath = (path: string) => {
+    window.location.hash = getPath(path);
+    if (getPath(path) === "") {
+      // Just to remove the trailing hash
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+  };
 
   const currentPathIs = (path: string) =>
-    actualPath === getLocalizedPath(path) ||
-    actualPath === `${getLocalizedPath(path)}/` ||
-    (path === "/" && actualPath === `/${language}`);
+    actualPath === getPath(path) ||
+    actualPath === `${getPath(path)}/` ||
+    (path === "/" && actualPath === `/`);
 
   return (
     <Stack
@@ -60,20 +65,22 @@ export const NavBar = () => {
         {routes.map(
           ({ name, path, logo }) =>
             name && (
-              <NavLink to={getLocalizedPath(path)} key={path}>
-                <Button
-                  marginRight="1em"
-                  marginLeft="1em"
-                  backgroundColor="veryAccent"
-                  borderWidth="2px"
-                  borderColor={currentPathIs(path) ? "white" : "veryAccent"}
-                  color="white"
-                  _hover={{ color: "accent" }}
-                  leftIcon={<Icon as={logo} />}
-                >
-                  <TextL>{name}</TextL>
-                </Button>
-              </NavLink>
+              <Button
+                key={path}
+                onClick={() => {
+                  changePath(path);
+                }}
+                marginRight="1em"
+                marginLeft="1em"
+                backgroundColor="veryAccent"
+                borderWidth="2px"
+                borderColor={currentPathIs(path) ? "white" : "veryAccent"}
+                color="white"
+                _hover={{ color: "accent" }}
+                leftIcon={<Icon as={logo} />}
+              >
+                <TextL>{name}</TextL>
+              </Button>
             )
         )}
       </Flex>
@@ -94,29 +101,28 @@ export const NavBar = () => {
             {routes.map(
               ({ name, path, logo }) =>
                 name && (
-                  <NavLink
+                  <MenuItem
                     key={path}
-                    to={getLocalizedPath(path)}
-                    style={{ width: "100%" }}
+                    onClick={() => {
+                      changePath(path);
+                    }}
+                    height="3em"
+                    width="100%"
+                    margin={"0.5em 0 0.5em 0"}
+                    background={currentPathIs(path) ? "accent" : ""}
+                    color={currentPathIs(path) ? "white" : "black"}
+                    _hover={{
+                      background: "veryAccent",
+                      color: "white",
+                    }}
+                    borderRadius="1em"
+                    justifyContent="center"
                   >
-                    <MenuItem
-                      height="3em"
-                      margin={"0.5em 0 0.5em 0"}
-                      background={currentPathIs(path) ? "accent" : ""}
-                      color={currentPathIs(path) ? "white" : "black"}
-                      _hover={{
-                        background: "veryAccent",
-                        color: "white",
-                      }}
-                      borderRadius="1em"
-                      justifyContent="center"
-                    >
-                      <Icon as={logo} />
-                      <TextL marginLeft="1em" fontSize="lg">
-                        {name}
-                      </TextL>
-                    </MenuItem>
-                  </NavLink>
+                    <Icon as={logo} />
+                    <TextL marginLeft="1em" fontSize="lg">
+                      {name}
+                    </TextL>
+                  </MenuItem>
                 )
             )}
           </MenuList>

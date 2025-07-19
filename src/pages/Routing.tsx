@@ -1,10 +1,7 @@
-import type { Language } from "../utils/Language";
 import { Center, Spinner } from "@chakra-ui/react";
 import {
   lazy,
   Suspense,
-  useContext,
-  useEffect,
   type ComponentType,
   type LazyExoticComponent,
 } from "react";
@@ -16,8 +13,8 @@ import {
   AiOutlinePicture,
 } from "react-icons/ai";
 import { MdOutlineScience } from "react-icons/md";
-import { Route, Routes, useNavigate } from "react-router-dom";
-import { LanguageContext, type TextLanguage } from "../utils/Language";
+import { Route, Routes } from "react-router-dom";
+import { type TextLanguage } from "../utils/Language";
 import Home from "./Home/Home";
 
 /** A route of the app */
@@ -65,29 +62,7 @@ export const routes: RoutePath[] = [
   },
 ];
 
-export const Routing = ({ language }: { language: Language | null }) => {
-  const navigate = useNavigate();
-  const { updateLanguageRouteChange } = useContext(LanguageContext);
-
-  useEffect(() => {
-    if (!language) {
-      const navigatorLang = navigator.language.toLowerCase().includes("fr")
-        ? "fr"
-        : "en";
-
-      // Redirect to the language-specific route
-      navigate(`/${navigatorLang}`, { replace: true });
-      return;
-    }
-
-    // Update the language in the context
-    updateLanguageRouteChange(language);
-  }, [language]);
-
-  if (!language) {
-    return null;
-  }
-
+export const Routing = () => {
   return (
     <Routes>
       {routes.map(({ path, Element }) => (

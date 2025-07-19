@@ -1,17 +1,35 @@
-import { Center, Grid, Spinner } from "@chakra-ui/react";
+import { Grid } from "@chakra-ui/react";
 
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import packageJson from "../package.json";
 import { NavBar } from "./pages/NavBar";
-import { languages } from "./utils/Language";
+import { LanguageContext, languages, type Language } from "./utils/Language";
 import { DynamicHeaders } from "./pages/DynamicHeaders";
 import { Routing } from "./pages/Routing";
-import { lazy, Suspense } from "react";
-
-const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
+import { useContext, useEffect } from "react";
 
 const App = () => {
   console.log(` -> Welcome to my website, version ${packageJson.version}`);
+
+  const { language, updateLanguageRouteChange } = useContext(LanguageContext);
+
+  useEffect(() => {
+    const langInPath = window.location.pathname.slice(1);
+    if (langInPath === "" || !languages.includes(langInPath as Language)) {
+      // Redirect to the homepage with the default language
+      const navigatorLang = navigator.language.toLowerCase().includes("fr")
+        ? "fr"
+        : "en";
+
+      window.history.replaceState(null, "", `/${navigatorLang}`);
+      return;
+    }
+
+    if (langInPath !== language) {
+      updateLanguageRouteChange(langInPath as Language);
+      return;
+    }
+  }, []);
 
   return (
     <HashRouter>
@@ -22,30 +40,7 @@ const App = () => {
         marginBottom="15em"
       >
         <NavBar />
-        <Routes>
-          <Route path="/" element={<Routing language={null} />} />
-          {languages.map((lang) => (
-            <Route
-              key={lang}
-              path={`/${lang}/*`}
-              element={<Routing language={lang} />}
-            />
-          ))}
-          <Route
-            path="*"
-            element={
-              <Suspense
-                fallback={
-                  <Center marginTop="30vh">
-                    <Spinner size="xl" />
-                  </Center>
-                }
-              >
-                <NotFoundPage />
-              </Suspense>
-            }
-          />
-        </Routes>
+        <Routing />
       </Grid>
     </HashRouter>
   );
