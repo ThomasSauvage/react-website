@@ -3,7 +3,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { getText, LanguageContext, languages } from "../utils/Language";
 import { introduction } from "../utils/intro";
 
-const URL = "https://sauvage.pm/";
+const URL = "https://sauvage.pm";
 
 export const DynamicHeaders = () => {
   const { language } = useContext(LanguageContext);
@@ -18,7 +18,7 @@ export const DynamicHeaders = () => {
             rel="alternate"
             key={lang}
             hrefLang={lang}
-            href={`${URL}${lang}/`}
+            href={`${URL}/${lang}`}
           />
         ))}
         <link rel="alternate" hrefLang="x-default" href={URL} />
