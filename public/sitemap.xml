@@ -4,23 +4,23 @@
     xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
     <url>
-        <loc>https://sauvage.pm/</loc>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://sauvage.pm/fr/" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://sauvage.pm/en/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://sauvage.pm/" />
+        <loc>https://sauvage.pm</loc>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://sauvage.pm/fr" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://sauvage.pm/en" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sauvage.pm" />
     </url>
 
     <url>
-        <loc>https://sauvage.pm/fr/</loc>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://sauvage.pm/fr/" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://sauvage.pm/en/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://sauvage.pm/" />
+        <loc>https://sauvage.pm/fr</loc>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://sauvage.pm/fr" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://sauvage.pm/en" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sauvage.pm" />
     </url>
 
     <url>
-        <loc>https://sauvage.pm/en/</loc>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://sauvage.pm/fr/" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://sauvage.pm/en/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://sauvage.pm/" />
+        <loc>https://sauvage.pm/en</loc>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://sauvage.pm/fr" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://sauvage.pm/en" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sauvage.pm" />
     </url>
 </urlset>
