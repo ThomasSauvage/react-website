@@ -31,8 +31,14 @@ export const Experiences = () => {
           </ListItemL>
           <ListItemL>
             {{
-              fr: "Évaluation des limitations de scalabilité d'un VPN Cloud-Native",
-              en: "Assessing the scalability limitations of a Cloud-Native VPN",
+              fr: "Évaluation des limitations de scalabilité de l'infrastructure d'un VPN Cloud-Native",
+              en: "Assessing the scalability limitations of a Cloud-Native VPN infrastructure",
+            }}
+          </ListItemL>
+          <ListItemL>
+            {{
+              fr: "Récompense : Grand Prix du Stage de Recherche de l'École polytechnique",
+              en: "Awarded: École polytechnique Research Internship Grand Prize",
             }}
           </ListItemL>
           <ListItemL>

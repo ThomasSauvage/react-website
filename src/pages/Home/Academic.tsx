@@ -43,7 +43,7 @@ export const Academic = () => {
           </ListItemL>
           <ListItemL>
             {{
-              fr: "Récompensé : Outstanding leadership & Outstanding investment",
+              fr: "Récompense : Outstanding leadership & Outstanding investment",
               en: "Awarded: Outstanding leadership & Outstanding investment",
             }}
           </ListItemL>
