@@ -149,6 +149,24 @@ export const Skills = () => {
           <List>
             <ListItemL>
               {{
+                fr: "Kubernetes : Cilium, Highly available load balancer, HA Ingress, Talos...",
+                en: "Kubernetes: Cilium, Highly available load balancer, HA Ingress, Talos...",
+              }}
+            </ListItemL>
+            <ListItemL>
+              {{
+                fr: "Virtualisation : Proxmox, Docker, ...",
+                en: "Virtualization: Proxmox, Docker, ...",
+              }}
+            </ListItemL>
+            <ListItemL>
+              {{
+                fr: "Réseau : TCP/IP, OSI layers, IPv4, IPv6, VPN, Contrôle de congestion (L4S...), BGP, OSPF...",
+                en: "Networking: TCP/IP, OSI layers, IPv4, IPv6, VPN, Congestion control (L4S...), BGP, OSPF...",
+              }}
+            </ListItemL>
+            <ListItemL>
+              {{
                 fr: "Cryptographie usuelle et post-quantique, hachage, utilisation d’un gestionnaire de mot de passe et d’une clé physique de sécurité (FIDO2)",
                 en: "Usual and post-quantum cryptography, hashing, use of a password manager and a physical security key (FIDO2)",
               }}
@@ -157,24 +175,6 @@ export const Skills = () => {
               {{
                 fr: "Sécurisation de serveurs linux (SSH, pare-feu, DMZ, ...)",
                 en: "Securing linux servers (SSH, firewall, DMZ, ...)",
-              }}
-            </ListItemL>
-            <ListItemL>
-              {{
-                fr: "Virtualisation (Proxmox, Docker, ...)",
-                en: "Virtualization (Proxmox, Docker, ...)",
-              }}
-            </ListItemL>
-            <ListItemL>
-              {{
-                fr: "Réseau",
-                en: "Networking",
-              }}
-            </ListItemL>
-            <ListItemL>
-              {{
-                fr: "Hébergement web",
-                en: "Cloud computing",
               }}
             </ListItemL>
           </List>

@@ -37,8 +37,14 @@ export const Experiences = () => {
           </ListItemL>
           <ListItemL>
             {{
-              fr: "Récompense : Grand Prix du Stage de Recherche de l'École polytechnique",
-              en: "Awarded: École polytechnique Research Internship Grand Prize",
+              fr: "Conception de modèles de machine learning pour prédire l'expérience utilisateur finale à partir des métriques des instances cloud",
+              en: "Designing machine learning models to predict end-user experience based on cloud instance metrics",
+            }}
+          </ListItemL>
+          <ListItemL>
+            {{
+              fr: "Récompense : Grand Prix du Stage de Recherche de l'École polytechnique (Meilleur stage en informatique)",
+              en: "Awarded: École polytechnique Research Internship Grand Prize (Best computer science internship)",
             }}
           </ListItemL>
           <ListItemL>

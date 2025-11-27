@@ -26,7 +26,9 @@ export const Intro = () => {
                 en: "Hello,",
               }}
             </TextL>
-            <TextL margin="0 2em 2em 2em">{introduction}</TextL>
+            <TextL margin="0 2em 2em 2em" textAlign="justify">
+              {introduction}
+            </TextL>
           </div>
         </Flex>
       </Section>
