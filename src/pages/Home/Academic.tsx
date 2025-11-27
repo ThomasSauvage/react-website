@@ -25,8 +25,8 @@ export const Academic = () => {
         <List>
           <ListItemL>
             {{
-              fr: "Actuellement en 3ème année",
-              en: "Currently in third year",
+              fr: "Actuellement en 4ème année",
+              en: "Currently in fourth year",
             }}
           </ListItemL>
           <ListItemL>
@@ -52,7 +52,7 @@ export const Academic = () => {
       <ExperienceLine
         company={{
           fr: "École d'ingéneur spécialisée en informatique",
-          en: "Engineering university specialized in computer science",
+          en: "France top-ranking computer science engineering university",
         }}
         jobTitle={{
           fr: "Télécom Paris",
@@ -68,13 +68,13 @@ export const Academic = () => {
           <ListItemL>
             {{
               fr: "École d'application dans le cadre du cycle ingénieur polytechnicien",
-              en: "Application school as part of the polytechnic engineering cycle",
+              en: "Application school as part of École polytechnique's engineering program",
             }}
           </ListItemL>
           <ListItemL>
             {{
-              fr: "Specialisation : Grandes infrastructures du numérique",
-              en: "Specialization: Large digital infrastructures",
+              fr: "Specialisation : Grandes infrastructures cloud",
+              en: "Specialization: Large cloud infrastructures",
             }}
           </ListItemL>
         </List>
