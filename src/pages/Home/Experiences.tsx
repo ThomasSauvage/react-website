@@ -13,8 +13,8 @@ export const Experiences = () => {
           en: "Cisco",
         }}
         jobTitle={{
-          fr: "Ingénieur stagiaire de recherche en réseaux",
-          en: "Networking research engineer intern",
+          fr: "Ingénieur stagiaire de recherche en cloud & réseaux",
+          en: "Cloud & networking research engineer intern",
         }}
         dates={{
           fr: "Avril - Août 2025",
