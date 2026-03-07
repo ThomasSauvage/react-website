@@ -5,7 +5,7 @@ import { ListItemAny, ListItemL } from "../../components/List";
 import { Section } from "../../components/Section";
 import { LanguageContext, TextL, getText } from "../../utils/Language";
 import { MdComputer } from "react-icons/md";
-import { FaFileContract, FaPaintBrush } from "react-icons/fa";
+import { FaPaintBrush, FaRobot } from "react-icons/fa";
 import { FaPeoplePulling, FaServer } from "react-icons/fa6";
 import { IoMdChatbubbles } from "react-icons/io";
 
@@ -21,8 +21,64 @@ export const Skills = () => {
       >
         <AccordionLineTextTitle
           title={getText(
+            {
+              fr: "Cloud, Réseaux & Cybersécurité",
+              en: "Cloud, Networking & Cybersecurity",
+            },
+            language,
+          )}
+          icon={FaServer}
+        >
+          <List>
+            <ListItemL>
+              {{
+                fr: "Kubernetes : Helm, Cilium, Highly available (HA) load balancer, HA Ingress et Gateway, Talos, ArgoCD, Network policies, Cert manager, ...",
+                en: "Kubernetes: Helm, Cilium, Highly available (HA) load balancer, HA Ingress and Gateway, Talos, ArgoCD, Network policies, Cert manager, ...",
+              }}
+            </ListItemL>
+            <ListItemL>
+              {{
+                fr: "Virtualisation : Proxmox, Docker, ...",
+                en: "Virtualization: Proxmox, Docker, ...",
+              }}
+            </ListItemL>
+            <ListItemL>
+              {{
+                fr: "DevSecOps : Ansible, CI/CD, Github Actions, Gitlab CI, ...",
+                en: "DevSecOps: Ansible, CI/CD, Github Actions, Gitlab CI, ...",
+              }}
+            </ListItemL>
+            <ListItemL>
+              {{
+                fr: "Observabilité & Monitoring : Prometheus, Grafana, OpenTelemetry, Cilium hubble...",
+                en: "Observability & Monitoring: Prometheus, Grafana, OpenTelemetry, Cilium hubble...",
+              }}
+            </ListItemL>
+            <ListItemL>
+              {{
+                fr: "Réseau : TCP/IP, couches OSI, IPv4, IPv6, VPN, Contrôle de congestion (L4S...), QUIC, BGP, OSPF, ...",
+                en: "Networking: TCP/IP, OSI layers, IPv4, IPv6, VPN, Congestion control (L4S...), QUIC, BGP, OSPF, ...",
+              }}
+            </ListItemL>
+            <ListItemL>
+              {{
+                fr: "Cryptographie : Implémentation et utilisation de cryptographie classique et post-quantique, chiffrement symétrique et asymétrique, hachage, dérivation de clés, PAKE, clé de sécurité physique (FIDO2), ...",
+                en: "Cryptography: Implementation and use of usual and post-quantum cryptography, symmetric and asymmetric encryption, hashing, key derivation, PAKE, physical security key (FIDO2), ...",
+              }}
+            </ListItemL>
+            <ListItemL>
+              {{
+                fr: "Sécurisation de serveurs linux : SSH, pare-feu, DMZ, ...",
+                en: "Securing linux servers: SSH, firewall, DMZ, ...",
+              }}
+            </ListItemL>
+          </List>
+        </AccordionLineTextTitle>
+
+        <AccordionLineTextTitle
+          title={getText(
             { fr: "Programmation", en: "Computer programming" },
-            language
+            language,
           )}
           icon={MdComputer}
         >
@@ -104,14 +160,8 @@ export const Skills = () => {
             </ListItemAny>
             <ListItemL marginLeft="3em">
               {{
-                fr: "en Vue, Node.js, Adonis...",
-                en: "in Vue, Node.js, Adonis...",
-              }}
-            </ListItemL>
-            <ListItemL>
-              {{
-                fr: "Intelligence artificielle",
-                en: "Artificial intelligence",
+                fr: "en Vue, Node.js, Adonis, Go fiber...",
+                en: "in Vue, Node.js, Adonis, Go fiber...",
               }}
             </ListItemL>
             <ListItemAny>
@@ -129,7 +179,7 @@ export const Skills = () => {
               >
                 {getText(
                   { fr: "compte GitHub", en: "GitHub account" },
-                  language
+                  language,
                 )}
               </Link>
             </ListItemAny>
@@ -138,43 +188,40 @@ export const Skills = () => {
 
         <AccordionLineTextTitle
           title={getText(
-            {
-              fr: "Administrateur système & Cybersécurité",
-              en: "System administrator & Cybersecurity",
-            },
-            language
+            { fr: "Intelligence artificielle", en: "Artificial intelligence" },
+            language,
           )}
-          icon={FaServer}
+          icon={FaRobot}
         >
           <List>
             <ListItemL>
               {{
-                fr: "Kubernetes : Cilium, Highly available load balancer, HA Ingress, Talos...",
-                en: "Kubernetes: Cilium, Highly available load balancer, HA Ingress, Talos...",
+                fr: "Deep neural networks : Tensorflow, Keras...",
+                en: "Deep neural networks: Tensorflow, Keras...",
               }}
             </ListItemL>
             <ListItemL>
               {{
-                fr: "Virtualisation : Proxmox, Docker, ...",
-                en: "Virtualization: Proxmox, Docker, ...",
+                fr: "Régression par regularizing gradient boosting : XGBoost...",
+                en: "Regularizing gradient boosting regression: XGBoost...",
               }}
             </ListItemL>
             <ListItemL>
               {{
-                fr: "Réseau : TCP/IP, OSI layers, IPv4, IPv6, VPN, Contrôle de congestion (L4S...), BGP, OSPF...",
-                en: "Networking: TCP/IP, OSI layers, IPv4, IPv6, VPN, Congestion control (L4S...), BGP, OSPF...",
+                fr: "Hyperparameter tuning : Optimisation bayésienne...",
+                en: "Hyperparameter tuning: Bayesian optimization...",
               }}
             </ListItemL>
             <ListItemL>
               {{
-                fr: "Cryptographie usuelle et post-quantique, hachage, utilisation d’un gestionnaire de mot de passe et d’une clé physique de sécurité (FIDO2)",
-                en: "Usual and post-quantum cryptography, hashing, use of a password manager and a physical security key (FIDO2)",
+                fr: "Augmentation de données : Synthetic minority over-sampling technique for regression with Gaussian noise, ...",
+                en: "Data augmentation: Synthetic minority over-sampling technique for regression with Gaussian noise, ...",
               }}
             </ListItemL>
             <ListItemL>
               {{
-                fr: "Sécurisation de serveurs linux (SSH, pare-feu, DMZ, ...)",
-                en: "Securing linux servers (SSH, firewall, DMZ, ...)",
+                fr: "Segmentation d'images : YOLO, ...",
+                en: "Image segmentation: YOLO, ...",
               }}
             </ListItemL>
           </List>
@@ -320,35 +367,6 @@ export const Skills = () => {
               {{
                 fr: "Avancé (B1/B2): Espagnol",
                 en: "Intermediate (B1/B2): Spanish",
-              }}
-            </ListItemL>
-          </List>
-        </AccordionLineTextTitle>
-
-        <AccordionLineTextTitle
-          title={getText(
-            { fr: "Certifications", en: "Certifications" },
-            language
-          )}
-          icon={FaFileContract}
-        >
-          <List>
-            <ListItemL>
-              {{
-                fr: "Test d'anglais de Cambridge (Linguaskill) - Score: 180+/180",
-                en: "Cambridge English Test (Linguaskill) - Score: 180+/180",
-              }}
-            </ListItemL>
-            <ListItemL>
-              {{
-                fr: "Permis de pilote de drones",
-                en: "Drone pilot license",
-              }}
-            </ListItemL>
-            <ListItemL>
-              {{
-                fr: "Prévention et secours civiques (PSC1)",
-                en: "First aid certificate (PSC1)",
               }}
             </ListItemL>
           </List>
