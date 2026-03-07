@@ -127,6 +127,12 @@ export const Skills = () => {
             </ListItemL>
             <ListItemL>
               {{
+                fr: "Systèmes embarqués : pilotes de périphériques, firmware, Rust asynchrone bas niveau, enclave sécurisée, ...",
+                en: "Embedded systems: device drivers, firmware, low-level async Rust, Secure enclave, ...",
+              }}
+            </ListItemL>
+            <ListItemL>
+              {{
                 fr: "Développement de sites internet",
                 en: "Websites development",
               }}
