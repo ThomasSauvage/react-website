@@ -9,6 +9,31 @@ export const Experiences = () => {
     <Section title={{ fr: "Expérience", en: "Experience" }}>
       <ExperienceLine
         company={{
+          fr: "Mistral AI",
+          en: "Mistral AI",
+        }}
+        jobTitle={{
+          fr: "Ingénieur stagiaire en IA appliquée",
+          en: "Applied AI Engineer Intern",
+        }}
+        dates={{
+          fr: "Juillet 2026 - Aujourd'hui",
+          en: "July 2026 - Present",
+        }}
+        logo="mistral.svg"
+      >
+        <List>
+          <ListItemL>
+            {{
+              fr: "À Paris, France",
+              en: "In Paris, France",
+            }}
+          </ListItemL>
+        </List>
+      </ExperienceLine>
+
+      <ExperienceLine
+        company={{
           fr: "Cisco",
           en: "Cisco",
         }}

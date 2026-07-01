@@ -17,8 +17,8 @@ export const Academic = () => {
           en: "École polytechnique",
         }}
         dates={{
-          fr: "2022 - 2025",
-          en: "2022 - 2025",
+          fr: "2022 - 2026",
+          en: "2022 - 2026",
         }}
         logo="X.svg"
       >
