@@ -22,17 +22,23 @@ I am Thomas Sauvage and this is my personal website.
 nvm install
 ```
 
+- Install `pnpm`
+
+```sh
+curl -fsSL https://get.pnpm.io/install.sh | env PNPM_VERSION=11.9.0 sh -
+```
+
 - Install dependencies
 
 ```sh
-npm i
+pnpm install
 ```
 
 ### Starting the development server
 
 ```sh
 nvm use
-npm run dev
+pnpm dev
 ```
 
 ### Deploying

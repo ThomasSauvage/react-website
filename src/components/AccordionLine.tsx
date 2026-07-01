@@ -3,8 +3,9 @@ import {
   AccordionIcon,
   AccordionItem,
   AccordionPanel,
-} from "@chakra-ui/accordion";
-import { Box, Heading } from "@chakra-ui/layout";
+  Box,
+  Heading,
+} from "@chakra-ui/react";
 import { type ReactNode } from "react";
 
 /** A line of the accordion. */

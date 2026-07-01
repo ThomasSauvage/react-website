@@ -1,4 +1,4 @@
-import { Heading, HStack, Text } from "@chakra-ui/layout";
+import { Heading, HStack, Text } from "@chakra-ui/react";
 import { type ReactNode } from "react";
 import { AccordionLine } from "./AccordionLine";
 import type { IconType } from "react-icons";
