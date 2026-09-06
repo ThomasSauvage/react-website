@@ -26,7 +26,6 @@ export const Section = ({ title, children, ...props }: SectionProps) => {
       borderColor="border"
       borderRadius="0.65em"
       boxShadow="0 18px 45px rgba(106, 88, 165, 0.1)"
-      backdropFilter="blur(14px) saturate(115%)"
       {...props}
     >
       {title && (

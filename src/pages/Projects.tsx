@@ -4,17 +4,16 @@ import { ListItemL } from "../components/List";
 import { Section } from "../components/Section";
 import { TextL } from "../utils/Language";
 import { FaGithub } from "react-icons/fa";
-import { FaGitlab } from "react-icons/fa6";
 
 /** Page: Projects */
 const Projects = () => {
   return (
     <VStack>
-      <Section title={{ fr: "Git, GitHub, GitLab", en: "Git, GitHub, GitLab" }}>
+      <Section title={{ fr: "GitHub", en: "GitHub" }}>
         <TextL>
           {{
-            fr: "J'ai pu utiliser Git, GitHub et GitLab dans le cadre de mes projets. N'hésitez pas à y jeter un œil !",
-            en: "I used Git, GitHub and GitLab for many of my projects. Feel free to check them out!",
+            fr: "Retrouvez la plus-part de mes projets sur GitHub. N'hésitez pas à y jeter un œil !",
+            en: "You will find most of my projects on GitHub. Feel free to check them out!",
           }}
         </TextL>
         <Center marginTop="2em" gap="1em">
@@ -23,12 +22,120 @@ const Projects = () => {
               GitHub
             </Button>
           </Link>
-          <Link to="https://gitlab.binets.fr/svg" target="_blank">
-            <Button bg="accent" color="white" rightIcon={<FaGitlab />}>
-              GitLab
-            </Button>
-          </Link>
         </Center>
+      </Section>
+      <Section
+        title={{
+          fr: "Évaluation de la performance de TCP Prague et de l'architecture L4S • 2025 - 2026",
+          en: "Performance evaluation of TCP Prague and the L4S architecture • 2025 - 2026",
+        }}
+      >
+        <Flex
+          gap="1em"
+          alignItems="center"
+          justifyContent="space-around"
+          flexWrap="wrap"
+        >
+          <Image
+            src="/logos/telecom.svg"
+            maxHeight="10em"
+            alt="Logo Télécom Paris"
+          />
+          <Image
+            src="/logos/bouygues.svg"
+            maxHeight="10em"
+            maxWidth="15em"
+            alt="Logo Bouygues Telecom"
+          />
+
+          <VStack gap="1em">
+            <List>
+              <ListItemL>
+                {{
+                  fr: "Création d'un framework permettant d'évaluer le comportement d'algorithmes de contrôle de congestion (TCP Prague, Cubic, BBR, Reno) lorsqu'ils interagissent avec un routeur AQM dualpi2.",
+                  en: "Building a framework for evaluating the behavior of congestion control algorithms (TCP Prague, Cubic, BBR, Reno) when interacting with a dualpi2 AQM router.",
+                }}
+              </ListItemL>
+              <ListItemL>
+                {{
+                  fr: "Projet PRIM: Projet de Recherche et d'Innovation Master de Télécom Paris",
+                  en: "PRIM Project: Research and Innovation Project for the Master's Degree in Télécom Paris",
+                }}
+              </ListItemL>
+              <ListItemL>
+                {{
+                  fr: "En partenariat avec Bouygues Telecom.",
+                  en: "In partnership with Bouygues Telecom.",
+                }}
+              </ListItemL>
+              <ListItemL>
+                {{
+                  fr: "Implémentation en Rust.",
+                  en: "Implementation in Rust.",
+                }}
+              </ListItemL>
+            </List>
+            <Link to="https://github.com/PRIM-L4S/PRIM-L4S" target="_blank">
+              <Button bg="accent" color="white" rightIcon={<FaGithub />}>
+                <TextL>
+                  {{
+                    fr: "Implémentation sur GitHub",
+                    en: "Implementation on GitHub",
+                  }}
+                </TextL>
+              </Button>
+            </Link>
+          </VStack>
+        </Flex>
+      </Section>
+      <Section
+        title={{
+          fr: "Évaluation des limitations de scalabilité d'une infrastructure VPN cloud • 2025",
+          en: "Assessing scalability limitations of a cloud-based VPN infrastructure • 2025",
+        }}
+      >
+        <Flex
+          gap="1em"
+          alignItems="center"
+          justifyContent="space-around"
+          flexWrap="wrap"
+        >
+          <Image
+            src="/logos/cisco.svg"
+            height="7em"
+            maxHeight="10em"
+            alt="Logo Cisco"
+          />
+
+          <VStack gap="1em">
+            <List>
+              <ListItemL>
+                {{
+                  fr: "Conception d'une infrastructure VPN cloud évolutive, basée sur le cloud et multi-locataire, capable de soutenir des dizaines de milliers de clients présente des défis significatifs, particulièrement lorsque les clients nécessitent une connectivité site-à-site avec des milliers d'emplacements.",
+                  en: "Designing a scalable, cloud-based, and multi-tenant VPN infrastructure capable of supporting tens of thousands of clients presents significant challenges, particularly when customers require site-to-site connectivity with thousands of locations.",
+                }}
+              </ListItemL>
+              <ListItemL>
+                {{
+                  fr: "Analyse des métriques de production des instances cloud pour identifier les corrélations entre les schémas d'utilisation et l'état opérationnel des instances.",
+                  en: "Analyzing production metrics from cloud instances to identify correlations between usage patterns and the operational state of the instances.",
+                }}
+              </ListItemL>
+              <ListItemL>
+                {{
+                  fr: "Conception de modèles de machine learning pour prédire la qualité d'expérience des utilisateurs finaux basée uniquement sur les métriques des instances cloud.",
+                  en: "Designing machine learning models that predict end-user quality of experience based solely on metrics from the cloud instances.",
+                }}
+              </ListItemL>
+              <ListItemL>
+                {{
+                  fr: "Pour permettre des prédictions précises, un ensemble de données d'entraînement a été construit à l'aide d'un banc d'essai dédié qui collecte à la fois des métriques au niveau de l'utilisateur et au niveau des instances.",
+                  en: "To enable accurate predictions, a comprehensive training dataset was constructed using a dedicated test bench that collects both user-level and instance-level metrics.",
+                }}
+              </ListItemL>
+            </List>
+          </VStack>
+        </Flex>
       </Section>
       <Section
         title={{
@@ -72,7 +179,10 @@ const Projects = () => {
                 }}
               </ListItemL>
             </List>
-            <Link to="https://github.com/ThomasSauvage" target="_blank">
+            <Link
+              to="https://github.com/ThomasSauvage?tab=repositories&q=cryptography"
+              target="_blank"
+            >
               <Button bg="accent" color="white" rightIcon={<FaGithub />}>
                 <TextL>
                   {{
