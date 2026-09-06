@@ -19,10 +19,21 @@ export const Section = ({ title, children, ...props }: SectionProps) => {
   const stringTitle = getText(title ?? { fr: "", en: "" }, language);
 
   return (
-    <Card margin="1em" {...props}>
+    <Card
+      margin="1em"
+      backgroundColor="surface"
+      border="1px solid"
+      borderColor="border"
+      borderRadius="0.65em"
+      boxShadow="0 18px 45px rgba(106, 88, 165, 0.1)"
+      backdropFilter="blur(14px) saturate(115%)"
+      {...props}
+    >
       {title && (
         <CardHeader>
-          <Heading color="veryAccent">{stringTitle}</Heading>
+          <Heading color="veryAccent" size={{ base: "md", md: "lg" }}>
+            {stringTitle}
+          </Heading>
         </CardHeader>
       )}
 

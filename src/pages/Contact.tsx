@@ -100,7 +100,7 @@ const Contact = () => {
               fr: "Message envoyé",
               en: "Message sent",
             },
-            language
+            language,
           ),
           status: "success",
           duration: 5000,
@@ -115,14 +115,14 @@ const Contact = () => {
               fr: "Une erreur est survenue lors de l'envoi du message",
               en: "An error occurred while sending the message",
             },
-            language
+            language,
           ),
           status: "error",
           duration: 5000,
           isClosable: true,
         });
       },
-    }
+    },
   );
 
   const isValid = Object.keys(errors).length === 0;
@@ -153,6 +153,9 @@ const Contact = () => {
             justifyContent="center"
             flexDirection="row"
             display="flex"
+            _hover={{
+              backgroundColor: "none",
+            }}
           >
             <span>thomas</span>
             <Image
@@ -177,6 +180,9 @@ const Contact = () => {
                 )
               }
               disabled={copyData.email.clipboard.hasCopied}
+              _hover={{
+                backgroundColor: "rgb(225, 235, 241)",
+              }}
             >
               <TextL>
                 {{
@@ -205,7 +211,7 @@ const Contact = () => {
                           fr: "Pour chiffrer vos messages, vous pouvez utiliser ma clé PGP",
                           en: "To encrypt your messages, you can use my PGP key",
                         },
-                        language
+                        language,
                       )}
                     </Text>
                   </Box>
@@ -236,6 +242,9 @@ const Contact = () => {
                       onClick={() => {
                         if (copyData.pgpFingerprint.clipboard.hasCopied) return;
                         copy("pgpFingerprint");
+                      }}
+                      _hover={{
+                        backgroundColor: "rgb(225, 235, 241)",
                       }}
                     >
                       <TextL>
@@ -269,6 +278,9 @@ const Contact = () => {
                       onClick={() => {
                         if (copyData.pgpKey.clipboard.hasCopied) return;
                         copy("pgpKey");
+                      }}
+                      _hover={{
+                        backgroundColor: "rgb(225, 235, 241)",
                       }}
                     >
                       <TextL>

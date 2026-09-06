@@ -57,6 +57,41 @@ export const TextL = ({ children, ...props }: TextLProps) => {
   return <Text {...props}>{text}</Text>;
 };
 
+const LanguageButton = ({
+  language,
+  onClick,
+}: {
+  language: Language;
+  onClick: () => void;
+}) => {
+  const { language: currentLanguage } = useContext(LanguageContext);
+
+  return (
+    <Button
+      onClick={onClick}
+      backgroundColor={
+        currentLanguage === language
+          ? "rgba(135, 131, 209, 0.42)"
+          : "rgba(135, 131, 209, 0.2)"
+      }
+      border="1px solid"
+      borderColor={
+        currentLanguage === language
+          ? "rgba(255, 255, 255, 0.9)"
+          : "rgba(255, 255, 255, 0.28)"
+      }
+      _hover={{ backgroundColor: "rgba(135, 131, 209, 0.52)" }}
+      aria-label={`Select ${language.toUpperCase()} Language`}
+    >
+      <Image
+        src={`/flags/${language}.svg`}
+        width="1.5em"
+        alt={language.toUpperCase()}
+      />
+    </Button>
+  );
+};
+
 /** Fancy component to select the language */
 export const LanguageSelector = () => {
   const { language, updateLanguageRouteChange } = useContext(LanguageContext);
@@ -79,23 +114,9 @@ export const LanguageSelector = () => {
   };
 
   return (
-    <HStack width="10em" justifyContent="center">
-      <Button
-        onClick={() => setLanguage("fr")}
-        backgroundColor={language === "fr" ? "white" : "transparent"}
-        _hover={{}}
-        aria-label="Select French Language"
-      >
-        <Image src="/flags/fr.svg" width="1.5em" alt="FR" />
-      </Button>
-      <Button
-        onClick={() => setLanguage("en")}
-        backgroundColor={language === "en" ? "white" : "transparent"}
-        _hover={{}}
-        aria-label="Select English Language"
-      >
-        <Image src="/flags/en.svg" width="1.5em" alt="EN" />
-      </Button>
+    <HStack width="max-content" justifyContent="center">
+      <LanguageButton onClick={() => setLanguage("fr")} language="fr" />
+      <LanguageButton onClick={() => setLanguage("en")} language="en" />
     </HStack>
   );
 };

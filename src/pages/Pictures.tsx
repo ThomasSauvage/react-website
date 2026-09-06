@@ -32,6 +32,7 @@ const OnePicture = ({ name }: { name: string }) => {
         width={{ base: "90%", md: "auto" }}
         onClick={onOpen}
         borderRadius="0.5em"
+        cursor="zoom-in"
         alt={`Picture ${name}`}
       />
       <Modal isOpen={isOpen} onClose={onClose} size="full">
@@ -60,7 +61,12 @@ const OnePicture = ({ name }: { name: string }) => {
 /** Page: Pictures */
 const Pictures = () => {
   return (
-    <Flex flexWrap="wrap" gap="1em" justifyContent="space-around">
+    <Flex
+      flexWrap="wrap"
+      gap="1.25em"
+      justifyContent="space-around"
+      padding="1em"
+    >
       {pictures.map((name) => (
         <OnePicture name={name} key={name} />
       ))}
